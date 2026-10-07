@@ -1,0 +1,238 @@
+{
+  "description": "Set evaluasi retrieval untuk sample_data/sprint_review_portal_mitra.txt. Sebuah segmen dianggap relevan jika teksnya memuat salah satu fragmen di relevant_text_contains (tidak peka huruf besar-kecil). Kasus expect_no_answer=true menguji penolakan (butuh min_score > 0).",
+  "transcript": "sprint_review_portal_mitra.txt",
+  "cases": [
+    {
+      "id": "q01",
+      "query": "Apa isu yang dicatat di tiket MR-241?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "Yang paling kritis MR-241"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q02",
+      "query": "Berapa target p95 untuk MR-218?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "p95 sekarang",
+        "di bawah 300 milidetik"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q03",
+      "query": "Kapan PayLink menonaktifkan API versi 1?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "menonaktifkan API versi 1"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q04",
+      "query": "Tiket MR-255 dibuat untuk apa?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "nomor MR-255",
+        "tiket MR-255 untuk migrasi"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q05",
+      "query": "Berapa capaian SLA uptime bulan lalu?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "99,62"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q06",
+      "query": "Index apa yang ditambahkan pada kolom user_id?",
+      "category": "kata_kunci",
+      "relevant_text_contains": [
+        "index komposit"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q07",
+      "query": "Siapa yang bertanggung jawab membereskan halaman masuk yang lamban sampai naik ke production?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "saya yang pegang sampai deploy"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q08",
+      "query": "Kenapa pelanggan menerima surel duplikat?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "dipublikasikan dua kali",
+        "retry di message queue"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q09",
+      "query": "Apa hubungan fitur unduh laporan dengan loyalitas pelanggan?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "retensi tiga bulan 18 persen"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q10",
+      "query": "Mengapa tagihan infrastruktur membengkak?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "database replika yang lupa dimatikan",
+        "naik sekitar 20 persen"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q11",
+      "query": "Apa kendala dokumen hasil cetak untuk nama mitra yang memakai aksara asing?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "huruf Arab dan Mandarin"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q12",
+      "query": "Evaluasi akhir sprint dipindah ke hari apa?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "retrospektif sprint dipindah",
+        "retro pindah ke Jumat"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q13",
+      "query": "Berapa banyak skenario pengujian yang tidak lolos?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "34 lulus dan 3 gagal"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q14",
+      "query": "Apa usulan tampilan agar tabel dengan banyak kolom tetap terbaca?",
+      "category": "parafrase",
+      "relevant_text_contains": [
+        "layout landscape untuk tabel lebar"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q15",
+      "query": "Tanggal berapa v2.4.1 dirilis dan kapan code freeze?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "code freeze 10 Oktober, regresi"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q16",
+      "query": "Apakah ekspor PDF MR-230 ikut rilis v2.4.1?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "tidak masuk v2.4.1"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q17",
+      "query": "Bagaimana cara Dimas mencegah notifikasi ganda MR-241?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "deduplication key berdasarkan event_id"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q18",
+      "query": "Apa dampaknya kalau migrasi PayLink terlambat?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "pembayaran dari mitra akan gagal total"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q19",
+      "query": "Berapa jumlah sampel mitra di analisis retensi?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "412 mitra"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q20",
+      "query": "Berapa batas alert biaya harian yang dipasang?",
+      "category": "campuran",
+      "relevant_text_contains": [
+        "1,5 juta"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q21",
+      "query": "Who will fix the duplicate email notification bug?",
+      "category": "lintas_bahasa",
+      "relevant_text_contains": [
+        "deduplication key berdasarkan event_id",
+        "perbaiki MR-241 dengan deduplication"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q22",
+      "query": "When is version 2.4.1 going to be released?",
+      "category": "lintas_bahasa",
+      "relevant_text_contains": [
+        "rilis v2.4.1 tanggal 14 Oktober"
+      ],
+      "expect_no_answer": false
+    },
+    {
+      "id": "q23",
+      "query": "Berapa harga saham perusahaan hari ini?",
+      "category": "di_luar_cakupan",
+      "relevant_text_contains": [],
+      "expect_no_answer": true
+    },
+    {
+      "id": "q24",
+      "query": "Bagaimana resep rendang yang enak?",
+      "category": "di_luar_cakupan",
+      "relevant_text_contains": [],
+      "expect_no_answer": true
+    },
+    {
+      "id": "q25",
+      "query": "Siapa pemenang Piala Dunia terakhir?",
+      "category": "di_luar_cakupan",
+      "relevant_text_contains": [],
+      "expect_no_answer": true
+    },
+    {
+      "id": "q26",
+      "query": "Apa strategi pemasaran media sosial untuk kuartal depan?",
+      "category": "di_luar_cakupan",
+      "relevant_text_contains": [],
+      "expect_no_answer": true
+    }
+  ]
+}

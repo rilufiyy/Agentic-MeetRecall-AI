@@ -1,0 +1,30 @@
+{
+  "rekap_id": "d0f78c2a6ff9",
+  "meeting_id": "65c34785-5cb8-4ebc-b555-8e22a86eabf7",
+  "dibuat": "2026-10-05T09:12:53+00:00",
+  "diperbarui": "2026-10-05T09:13:27+00:00",
+  "trace_ids": [
+    "3fef37bb3ea540bd9490bc3586167083"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Speaker 0 meminta pihak lain untuk melakukan pekerjaan dan memberi tahu setelah selesai.",
+          "kutipan": "go ahead and and and do that work and then let me know.",
+          "chunk_id": 97,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "27:46",
+          "selesai": "27:52",
+          "penanggung_jawab": "",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

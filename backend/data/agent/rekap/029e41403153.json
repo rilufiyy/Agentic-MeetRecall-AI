@@ -1,0 +1,309 @@
+{
+  "rekap_id": "029e41403153",
+  "meeting_id": "0653d0f8-0c12-47c9-8dc8-5855fad68819",
+  "dibuat": "2026-10-06T07:35:58+00:00",
+  "diperbarui": "2026-10-06T07:37:33+00:00",
+  "trace_ids": [
+    "7b2ad96f9266423a8e08ba0126deb7a8"
+  ],
+  "bagian": {
+    "ringkasan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "R1",
+          "isi": "Peniadaan kerja di hari libur",
+          "kutipan": "pembahasan yang didapat adalah yang pertama itu adalah peniadaan kerja di hari libur",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49"
+        },
+        {
+          "id": "R2",
+          "isi": "Toleransi keterlambatan 3 kali per bulan",
+          "kutipan": "pemberian toleransi keterlambatan berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49"
+        },
+        {
+          "id": "R3",
+          "isi": "Potongan gaji Rp50.000 untuk keterlambatan",
+          "kutipan": "keterlambatan mereka dipotong gaji sebesar Rp50.000 saja",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "R4",
+          "isi": "Jam kerja diubah menjadi 06.00-08.00",
+          "kutipan": "perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "R5",
+          "isi": "Pelatihan dan diklat pegawai secara rutin",
+          "kutipan": "pengadaan pelatihan dan diklat pegawai secara rutin",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "R6",
+          "isi": "Reward rutin berupa piagam atau sertifikat",
+          "kutipan": "pemberian reward rutin kepada para pegawai yaitu dapat berupa piagam atau sertifikat dan sebagainya",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "R7",
+          "isi": "Solusi dari Kepala Divisi diterima oleh Direktur",
+          "kutipan": "solusi-solusi tadi sangat bagus dan dapat saya terima",
+          "chunk_id": 23,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "09:08",
+          "selesai": "09:27"
+        },
+        {
+          "id": "R8",
+          "isi": "Rapat selesai pada pukul 10.50 WIB",
+          "kutipan": "rapat sepertinya sudah bisa diakhiri karena waktu sudah menunjukkan pukul 10.50",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "09:08",
+          "selesai": "09:27"
+        }
+      ],
+      "fokus": []
+    },
+    "keputusan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "K1",
+          "isi": "Pemberian toleransi keterlambatan 3 kali per bulan",
+          "kutipan": "pemberian toleransi keterlambatan berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49"
+        },
+        {
+          "id": "K2",
+          "isi": "Pemberian reward rutin bagi pegawai",
+          "kutipan": "berikan juga reward rutin bagi para pegawai yang walaupun pun tidak harus selalu uang",
+          "chunk_id": 20,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "07:50",
+          "selesai": "08:09"
+        },
+        {
+          "id": "K3",
+          "isi": "Ketegasan tidak memberikan pekerjaan di luar jam kerja bagi kepala divisi",
+          "kutipan": "pemberian kebijakan ini bisa berupa ketegasan untuk kantor agar tidak memberikan pekerjaan di luar jam kerja",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "07:14",
+          "selesai": "07:32"
+        },
+        {
+          "id": "K4",
+          "isi": "Pemberian reward bagi pegawai yang bekerja di hari libur jika memang urgen",
+          "kutipan": "jika memang benar-benar ada pekerjaan yang urgen di hari libur, pegawai bisa diberikan reward",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50"
+        },
+        {
+          "id": "K5",
+          "isi": "Peningkatan hari cuti dari 1 minggu menjadi 1 bulan per tahun",
+          "kutipan": "misalnya dari 1 minggu setahun menjadi 1 bulan setahun",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50"
+        },
+        {
+          "id": "K6",
+          "isi": "Kebijakan baru diterima oleh Bapak Wildan",
+          "kutipan": "solusi‑solusi tadi sangat bagus dan dapat saya terima",
+          "chunk_id": 23,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "09:08",
+          "selesai": "09:27"
+        },
+        {
+          "id": "K7",
+          "isi": "Semoga kebijakan baru dapat terwujud di perusahaan",
+          "kutipan": "semoga dalam pembuatan kebijakan yang baru nanti semua dapat terwujud di perusahaan kita",
+          "chunk_id": 23,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "09:08",
+          "selesai": "09:27"
+        },
+        {
+          "id": "K8",
+          "isi": "Keterlambatan akan dipotong gaji sebesar Rp50.000.",
+          "kutipan": "Selebihnya keterlambatan mereka dipotong gaji sebesar Rp50.000 saja.",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "K9",
+          "isi": "Jam kerja akan dimulai pukul 08.00.",
+          "kutipan": "Lalu yang ketiga ada perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00.",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "K10",
+          "isi": "Pelatihan dan diklat pegawai akan diadakan secara rutin.",
+          "kutipan": "Lalu yang keempat ada pengadaan pelatihan dan diklat pegawai secara rutin.",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        },
+        {
+          "id": "K11",
+          "isi": "Reward rutin berupa piagam atau sertifikat akan diberikan kepada pegawai.",
+          "kutipan": "Lalu yang kelima ada pemberian reward rutin kepada para pegawai yaitu dapat berupa piagam atau sertifikat dan sebagainya.",
+          "chunk_id": 26,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09"
+        }
+      ],
+      "fokus": []
+    },
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Menerapkan kebijakan perusahaan baru mengenai kedisiplinan pegawai",
+          "kutipan": "Solusi dari saya sendiri mungkin kita akan menerapkan kebijakan perusahaan yang baru mengenai kedisiplinan kedisiplinan pegawai.",
+          "chunk_id": 17,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "06:49",
+          "selesai": "07:10",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Setuju dengan pembentukan kebijakan baru dan menegaskan tidak ada pekerjaan di luar jam kerja",
+          "kutipan": "Saya setuju dengan pembentukan kebijakan baru yang Bapak sampaikan tadi. Nah, mungkin pemberian kebijakan ini bisa berupa ketegasan untuk kantor agar tidak memberikan pekerjaan di luar jam kerja terutama untuk kepala divisi masing-masing bagian agar memberi hak libur bagi para pegawainya.",
+          "chunk_id": 17,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "07:14",
+          "selesai": "07:32",
+          "penanggung_jawab": "Speaker 4",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Menambahkan solusi pemberian reward bagi pegawai yang bekerja di hari libur",
+          "kutipan": "Jika memang benar-benar ada pekerjaan yang urgen di hari libur, pegawai bisa diberikan reward.",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50",
+          "penanggung_jawab": "Speaker 5",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Menambahkan solusi tambahan cuti dari 1 minggu menjadi 1 bulan",
+          "kutipan": "Dan untuk hari cuti yang kurang bisa ditambahkan saja Pak. Misalnya dari 1 minggu setahun menjadi 1 bulan setahun.",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50",
+          "penanggung_jawab": "Speaker 5",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A5",
+          "isi": "Penyimpulan kebijakan: peniadaan kerja di hari libur",
+          "kutipan": "Peniadaan kerja di hari libur",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A6",
+          "isi": "Penyimpulan kebijakan: pemberian toleransi keterlambatan 3 kali per bulan",
+          "kutipan": "Pemberian toleransi keterlambatan berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan.",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A7",
+          "isi": "Penyimpulan kebijakan: potongan gaji Rp50.000 untuk keterlambatan lebih dari 3 kali",
+          "kutipan": "Selebihnya keterlambatan mereka dipotong gaji sebesar Rp50.000 saja.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A8",
+          "isi": "Penyimpulan kebijakan: perubahan jam kerja menjadi 08.00",
+          "kutipan": "Perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    },
+    "isu_terbuka": {
+      "status": "tidak_ditemukan",
+      "items": [],
+      "fokus": []
+    }
+  }
+}

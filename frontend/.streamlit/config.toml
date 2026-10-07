@@ -1,0 +1,8 @@
+# The custom CSS in utils/styles.py is designed for this dark palette,
+# so the theme is fixed to dark instead of following the OS/browser setting.
+[theme]
+base = "dark"
+primaryColor = "#818cf8"
+backgroundColor = "#0f172a"
+secondaryBackgroundColor = "#1e293b"
+textColor = "#e2e8f0"

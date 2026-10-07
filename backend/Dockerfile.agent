@@ -1,0 +1,8 @@
+# W78 agent image: the W6 backend image plus the agent-only dependencies.
+# Builds quickly and leaves meetrecall-backend:latest (shared with W6) untouched.
+#   docker build -f backend/Dockerfile.agent -t meetrecall-agent:latest backend
+FROM meetrecall-backend:latest
+# fonts-liberation: Arial-compatible sans-serif for the PDF report (Latin, Greek, Cyrillic).
+RUN apt-get update && apt-get install -y --no-install-recommends fonts-liberation \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir fpdf2==2.8.9 python-docx==1.2.0

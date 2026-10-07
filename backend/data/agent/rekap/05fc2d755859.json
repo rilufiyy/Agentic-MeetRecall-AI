@@ -1,0 +1,16 @@
+{
+  "rekap_id": "05fc2d755859",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-05T07:56:50+00:00",
+  "diperbarui": "2026-10-05T07:57:09+00:00",
+  "trace_ids": [
+    "a7e3848097024f54b3d5ee5db824b261"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "tidak_ditemukan",
+      "items": [],
+      "fokus": []
+    }
+  }
+}

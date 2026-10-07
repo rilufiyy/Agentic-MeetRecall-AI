@@ -1,0 +1,56 @@
+{
+  "rekap_id": "f6d8b61bfce6",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-07T07:21:20+00:00",
+  "diperbarui": "2026-10-07T07:21:21+00:00",
+  "trace_ids": [
+    "d1955b4b43dd4bda86ec92904ae56897"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Jason akan mencatat rapat hari ini.",
+          "kutipan": "Jason, can you please take the minutes today?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:20",
+          "selesai": "00:24",
+          "penanggung_jawab": "Jason",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Carrie akan memberikan pembaruan strategi pemasaran Ginger Cola.",
+          "kutipan": "Carrie, can you please give us an update on the marketing strategy for our new beverage, Ginger Cola?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:42",
+          "selesai": "00:50",
+          "penanggung_jawab": "Carrie",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 2 akan siap mempresentasikan rencana kepada semua orang.",
+          "kutipan": "I will be ready to present to everyone then.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "02:19",
+          "selesai": "02:24",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

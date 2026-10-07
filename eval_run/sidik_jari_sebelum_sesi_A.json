@@ -1,0 +1,20 @@
+{
+ "kode": {
+  "sha": "815dee68864de752",
+  "jumlah_berkas": 41
+ },
+ "konfigurasi": {
+  "MAX_ITERATIONS": 8,
+  "MAX_CONSECUTIVE_TOOL_ERRORS": 2,
+  "MAX_LLM_RETRIES": 1,
+  "RETRIEVAL_MODE": "hybrid",
+  "RETRIEVAL_FUSION": "rrf",
+  "RETRIEVAL_MIN_SCORE": 0.4,
+  "TOOL_CHUNK_MAX_CHARS": 600,
+  "EXTRACT_MAX_CHUNKS": 12,
+  "EXTRACT_MAX_CALLS": 3,
+  "MAX_TASK_ITEMS": 20,
+  "EMAIL_MODE": "dry_run",
+  "sha": "48956add792c0b16"
+ }
+}

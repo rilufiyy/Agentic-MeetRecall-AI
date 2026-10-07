@@ -1,0 +1,69 @@
+{
+  "rekap_id": "b5b0ebb04b9a",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-05T08:11:02+00:00",
+  "diperbarui": "2026-10-05T08:11:45+00:00",
+  "trace_ids": [
+    "de24fd6e41cb4a9e902271885fd2f6a1"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Jason harus mencatat notulen hari ini.",
+          "kutipan": "Jason, can you please take the minutes today?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:20",
+          "selesai": "00:24",
+          "penanggung_jawab": "Jason",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Carrie harus memberikan pembaruan strategi pemasaran.",
+          "kutipan": "Carrie, can you please give us an update on the marketing strategy for our new beverage, Ginger Cola?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:42",
+          "selesai": "00:50",
+          "penanggung_jawab": "Carrie",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 2 akan siap mempresentasikan.",
+          "kutipan": "I will be ready to present to everyone then.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "02:19",
+          "selesai": "02:24",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Menyisihkan waktu lebih di pertemuan berikutnya untuk tinjauan lebih mendalam.",
+          "kutipan": "Let's set aside more time at the next meeting for a more in-depth look at what you have planned.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "02:00",
+          "selesai": "02:09",
+          "penanggung_jawab": "",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

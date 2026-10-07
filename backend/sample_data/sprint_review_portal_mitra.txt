@@ -1,0 +1,59 @@
+# MeetRecall AI - transkrip contoh (sintetis, CC0, tanpa pembicara nyata)
+# Sprint Review dan Planning tim Portal Mitra, dipakai untuk eksperimen retrieval.
+# Format: [hh:mm:ss] Speaker: teks
+[00:00:04] Rina: Selamat pagi semua, kita mulai sprint review untuk sprint 14 Portal Mitra ya.
+[00:00:11] Rina: Agendanya ada empat: status tiket, hasil QA, rencana rilis, lalu risiko dan anggaran.
+[00:00:20] Budi: Oke, siap.
+[00:00:23] Rina: Dimas, mulai dari backend dulu. Tiket MR-218 gimana perkembangannya?
+[00:00:30] Dimas: MR-218 itu isu halaman login yang lambat. Waktu respons p95 sekarang masih di 850 milidetik.
+[00:00:41] Dimas: Targetnya di bawah 300 milidetik. Penyebab utamanya query ke tabel sesi yang belum punya index.
+[00:00:52] Dimas: Saya sudah tambahkan index komposit di kolom user_id dan expired_at, hasil uji di staging turun jadi 280 milidetik.
+[00:01:05] Rina: Bagus. Berarti autentikasi yang lemot itu tinggal nunggu deploy ke production?
+[00:01:12] Dimas: Betul, saya yang pegang sampai deploy. Rencananya naik bareng rilis v2.4.1.
+[00:01:22] Rina: Lalu MR-230, fitur ekspor laporan ke PDF?
+[00:01:28] Dimas: MR-230 masih jalan sekitar 60 persen. Library render PDF yang lama tidak mendukung huruf Arab dan Mandarin untuk nama mitra.
+[00:01:40] Dimas: Kami ganti ke library baru, tapi layout tabel masih berantakan kalau kolomnya lebih dari delapan.
+[00:01:51] Ayu: Dari sisi desain, saya bisa bikin versi layout landscape untuk tabel lebar, biar kolomnya muat.
+[00:02:00] Rina: Oke, Ayu tolong siapkan mockup landscape paling lambat Rabu ya.
+[00:02:06] Ayu: Siap, Rabu saya kirim di channel desain.
+[00:02:10] Rina: Sari, hasil QA minggu ini bagaimana?
+[00:02:15] Sari: Total ada 37 test case regresi, 34 lulus dan 3 gagal.
+[00:02:23] Sari: Yang paling kritis MR-241, notifikasi email terkirim dua kali setiap mitra mengubah alamat penagihan.
+[00:02:34] Sari: Sepertinya event perubahan data dipublikasikan dua kali oleh service billing, jadi consumer notifikasi memproses keduanya.
+[00:02:45] Dimas: Itu kemungkinan karena retry di message queue tidak idempoten. Saya bisa tambahkan deduplication key berdasarkan event_id.
+[00:02:56] Rina: Tolong prioritaskan ya, karena komplain soal email ganda sudah masuk ke tim customer success.
+[00:03:05] Sari: Dua test case gagal lainnya minor, soal tooltip yang terpotong di layar kecil.
+[00:03:13] Ayu: Tooltip terpotong itu dari saya, nanti saya perbaiki breakpoint untuk layar di bawah 360 piksel.
+[00:03:21] Rina: Oke. Budi, dari tim data ada update?
+[00:03:25] Budi: Ada. Dashboard retensi mitra sudah jadi, datanya diperbarui setiap jam lewat pipeline ETL di n8n.
+[00:03:36] Budi: Temuan menarik, mitra yang aktif memakai fitur ekspor laporan punya tingkat retensi tiga bulan 18 persen lebih tinggi.
+[00:03:48] Rina: Wah, itu argumen bagus untuk memprioritaskan MR-230.
+[00:03:53] Budi: Betul. Tapi catatan, sampelnya baru 412 mitra, jadi belum bisa disimpulkan sebagai hubungan sebab akibat.
+[00:04:04] Rina: Noted. Sekarang rencana rilis. Kita sepakat v2.4.1 rilis tanggal 14 Oktober?
+[00:04:12] Dimas: Setuju, asal code freeze tanggal 10 Oktober.
+[00:04:17] Sari: Dari QA butuh minimal tiga hari kerja setelah code freeze untuk regresi penuh.
+[00:04:25] Rina: Oke, diputuskan: code freeze 10 Oktober, regresi 11 sampai 13 Oktober, rilis v2.4.1 tanggal 14 Oktober.
+[00:04:37] Rina: Isi rilisnya perbaikan login MR-218, perbaikan notifikasi ganda MR-241, dan perbaikan tooltip.
+[00:04:47] Rina: MR-230 ekspor PDF tidak masuk v2.4.1, kita geser ke v2.5 bulan November.
+[00:04:56] Ayu: Berarti mockup landscape tetap saya kerjakan tapi tidak buru-buru ya?
+[00:05:01] Rina: Tetap Rabu saja, supaya Dimas bisa mulai estimasi lebih awal.
+[00:05:07] Rina: Terakhir, risiko dan anggaran.
+[00:05:11] Dimas: Risiko terbesar ada di payment gateway PayLink. Mereka akan menonaktifkan API versi 1 per 1 Desember.
+[00:05:22] Dimas: Kalau kita belum migrasi ke API versi 2, pembayaran dari mitra akan gagal total.
+[00:05:30] Rina: Estimasi migrasinya berapa lama?
+[00:05:33] Dimas: Kurang lebih dua sprint, termasuk pengujian di sandbox PayLink.
+[00:05:40] Rina: Oke, migrasi PayLink kita jadikan prioritas pertama di sprint 15 dan 16. Tolong buatkan tiketnya, Dimas.
+[00:05:49] Dimas: Siap, nanti saya buat dengan nomor MR-255.
+[00:05:53] Budi: Soal anggaran, biaya server cloud bulan lalu naik sekitar 20 persen dibanding bulan sebelumnya.
+[00:06:02] Budi: Penyebabnya instance database replika yang lupa dimatikan setelah uji beban bulan lalu.
+[00:06:10] Rina: Tolong matikan hari ini juga, dan pasang alert kalau biaya harian melewati batas.
+[00:06:17] Budi: Siap, batas alert saya set di 1,5 juta rupiah per hari.
+[00:06:24] Sari: Satu lagi, target SLA uptime kita 99,5 persen. Bulan lalu tercapai 99,62 persen.
+[00:06:33] Rina: Bagus, pertahankan. Ada lagi sebelum kita tutup?
+[00:06:38] Ayu: Saya mau usul, retrospektif sprint dipindah ke Jumat sore supaya tidak bentrok dengan demo klien hari Kamis.
+[00:06:47] Rina: Setuju, mulai sprint 15 retro pindah ke Jumat jam tiga sore.
+[00:06:54] Rina: Rangkuman tindak lanjut: Dimas deploy MR-218 dan perbaiki MR-241 dengan deduplication key, Ayu kirim mockup landscape hari Rabu.
+[00:07:06] Rina: Budi matikan database replika dan pasang alert biaya, Dimas buat tiket MR-255 untuk migrasi PayLink.
+[00:07:15] Rina: Terima kasih semuanya, sampai ketemu di planning sprint 15.
+[00:07:19] Budi: Makasih.
+[00:07:20] Sari: Terima kasih.

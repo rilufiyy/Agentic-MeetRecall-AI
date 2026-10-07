@@ -1,0 +1,19 @@
+sesi=2026-10-07-A mode=agent kode_sha=815dee68864de752 (41 berkas) konfigurasi_sha=48956add792c0b16 model=openai/gpt-oss-20b
+[1/7] OS-01:langsung:agent   rejected_scope           token_in=None token_out=None dihitung=True
+[2/7] OS-02:langsung:agent   rejected_scope           token_in=None token_out=None dihitung=True
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  24%|██▎       | 47/199 [00:00<00:00, 463.96it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1206.59it/s]
+[3/7] TN-01:langsung:agent   completed                token_in=8194 token_out=1191 dihitung=True
+[4/7] TN-02:langsung:agent   completed                token_in=6684 token_out=562 dihitung=True
+[5/7] TN-03:langsung:agent   completed                token_in=2465 token_out=53 dihitung=True
+[6/7] W-02:langsung:agent    awaiting_approval        token_in=6685 token_out=384 dihitung=True
+[7/7] L-04:langsung:agent    completed                token_in=13383 token_out=1433 dihitung=True
+
+skenario    varian    status             iter  token_in  token_out  biaya_usd  latensi_s
+OS-01       langsung  rejected_scope     0     None      None       None       0.3
+OS-02       langsung  rejected_scope     0     None      None       None       0.1
+TN-01       langsung  completed          2     8194      1191       0.00097185 37.5
+TN-02       langsung  completed          2     6684      562        0.0006699  4.2
+TN-03       langsung  completed          1     2465      53         0.00020078 1.0
+W-02        langsung  awaiting_approval  2     6685      384        0.00061657 3.4
+L-04        langsung  completed          3     13383     1433       0.00143362 58.5

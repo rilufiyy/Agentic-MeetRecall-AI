@@ -1,0 +1,95 @@
+{
+  "rekap_id": "0f8c2adce85d",
+  "meeting_id": "0653d0f8-0c12-47c9-8dc8-5855fad68819",
+  "dibuat": "2026-10-05T08:20:20+00:00",
+  "diperbarui": "2026-10-05T08:20:28+00:00",
+  "trace_ids": [
+    "319bb9050b694d0d9aaf9b36f538b76a"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Setuju dengan pembentukan kebijakan baru yang disampaikan",
+          "kutipan": "setuju dengan pembentukan kebijakan baru yang Bapak sampaikan tadi",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "07:14",
+          "selesai": "07:32",
+          "penanggung_jawab": "Speaker 4",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Memberikan reward bagi pegawai bila ada pekerjaan urgen di hari libur",
+          "kutipan": "mungkin jika memang benar-benar ada pekerjaan yang urgen di hari libur, pegawai bisa diberikan reward",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50",
+          "penanggung_jawab": "Speaker 5",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Memberikan toleransi keterlambatan hingga 3 kali dalam sebulan",
+          "kutipan": "pemberian toleransi keterlambatan berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Mengubah jam masuk kerja dari pukul 06.00 menjadi pukul 08.00",
+          "kutipan": "perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A5",
+          "isi": "Mengadakan pelatihan dan diklat pegawai secara rutin",
+          "kutipan": "pengadaan pelatihan dan diklat pegawai secara rutin",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A6",
+          "isi": "Meniadakan kerja di hari libur",
+          "kutipan": "peniadaan kerja di hari libur",
+          "chunk_id": 24,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:30",
+          "selesai": "09:49",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

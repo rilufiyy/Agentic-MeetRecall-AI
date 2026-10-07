@@ -1,0 +1,122 @@
+{
+  "rekap_id": "d9447d63b638",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-06T03:34:10+00:00",
+  "diperbarui": "2026-10-06T03:34:35+00:00",
+  "trace_ids": [
+    "e4ff8ceb61844d5585dcc6fb25616cbd"
+  ],
+  "bagian": {
+    "ringkasan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "R1",
+          "isi": "Tim dan Melinda terlambat, namun agenda masih banyak dibahas.",
+          "kutipan": "Tim and Melinda are running late.",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:10",
+          "selesai": "00:12"
+        },
+        {
+          "id": "R2",
+          "isi": "Ginger Cola diposisikan sebagai minuman kesehatan dan energi.",
+          "kutipan": "we have decided to pitch the new Ginger Cola as a health and energy drink.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:51",
+          "selesai": "00:58"
+        },
+        {
+          "id": "R3",
+          "isi": "Strategi promosi melibatkan selebriti liga baseball Jepang.",
+          "kutipan": "we are planning to have a power hitter from the Japan Baseball League as a celebrity endorsement.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "01:41",
+          "selesai": "01:49"
+        },
+        {
+          "id": "R4",
+          "isi": "Setiap anggota memiliki tugas terkait acara jalan bakti amal.",
+          "kutipan": "I have sent around an action list for each of you to take a look at.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "02:29",
+          "selesai": "02:34"
+        },
+        {
+          "id": "R5",
+          "isi": "Acara jalan bakti amal dianggap penting dan inovatif.",
+          "kutipan": "This has been at the top of all our agendas.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "03:04",
+          "selesai": "03:13"
+        }
+      ],
+      "fokus": []
+    },
+    "keputusan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "K1",
+          "isi": "Tim memutuskan untuk memasarkan Ginger Cola sebagai minuman kesehatan dan energi.",
+          "kutipan": "we have decided to pitch the new Ginger Cola as a health and energy drink.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:51",
+          "selesai": "00:58"
+        }
+      ],
+      "fokus": []
+    },
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Jason akan mencatat rapat hari ini",
+          "kutipan": "Jason, can you please take the minutes today?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:20",
+          "selesai": "00:24",
+          "penanggung_jawab": "Jason",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Carrie akan memberikan update strategi pemasaran Ginger Cola",
+          "kutipan": "Carrie, can you please give us an update on the marketing strategy for our new beverage, Ginger Cola?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:42",
+          "selesai": "00:50",
+          "penanggung_jawab": "Carrie",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 2 akan siap mempresentasikan rencana kepada semua orang",
+          "kutipan": "I will be ready to present to everyone then.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "02:19",
+          "selesai": "02:24",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

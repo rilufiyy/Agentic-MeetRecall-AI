@@ -1,0 +1,15 @@
+# Secrets come from env_file at runtime; never bake them into the image.
+.env
+*.env
+!.env.example
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Runtime data lives in named volumes.
+data/
+results/
+uploads/

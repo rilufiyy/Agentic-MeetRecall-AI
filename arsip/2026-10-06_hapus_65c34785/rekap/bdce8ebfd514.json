@@ -1,0 +1,56 @@
+{
+  "rekap_id": "bdce8ebfd514",
+  "meeting_id": "65c34785-5cb8-4ebc-b555-8e22a86eabf7",
+  "dibuat": "2026-10-06T02:46:40+00:00",
+  "diperbarui": "2026-10-06T02:46:41+00:00",
+  "trace_ids": [
+    "7cb9be29bdd44cc09d3195125c1daa86"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Andre akan berbicara dengan Tim untuk menindaklanjuti masalah dedicated engineer.",
+          "kutipan": "he'll talk with Tim further",
+          "chunk_id": 15,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "04:45",
+          "selesai": "05:08",
+          "penanggung_jawab": "Andre",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Sean akan meninjau tech debt masa depan.",
+          "kutipan": "Sean look at future tech debt",
+          "chunk_id": 95,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "27:20",
+          "selesai": "27:32",
+          "penanggung_jawab": "Sean",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 1 akan menambahkan agenda menarik pada pertemuan minggu depan.",
+          "kutipan": "I can put more exciting things on the agenda next week",
+          "chunk_id": 98,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "28:21",
+          "selesai": "28:31",
+          "penanggung_jawab": "Speaker 1",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "next week",
+          "status_tenggat": "relatif"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.env
+*.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+*.log
+*.sqlite
+*.db
+*.mp3
+*.wav
+*.mp4

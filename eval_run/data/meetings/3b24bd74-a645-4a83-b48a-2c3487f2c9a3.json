@@ -1,0 +1,71 @@
+{
+  "meeting_id": "3b24bd74-a645-4a83-b48a-2c3487f2c9a3",
+  "filename": "vidssave.com Weekly Meeting Example 360P.mp4",
+  "duration": 98.35975,
+  "segments": [
+    {
+      "start_time": 0.4,
+      "end_time": 14.7,
+      "speaker": "Speaker 0",
+      "text": "Hello, everyone. Thank you guys for coming to our weekly student success meeting. Um, and let's just get started. So, I have our list of chronically absent students here, and I've been noticing a troubling trend. Um, a lot of students are skipping on Fridays."
+    },
+    {
+      "start_time": 14.7,
+      "end_time": 16.7,
+      "speaker": "Speaker 0",
+      "text": "Does anyone have any idea what's going on?"
+    },
+    {
+      "start_time": 17.4,
+      "end_time": 25.6,
+      "speaker": "Speaker 1",
+      "text": "I've heard some of my mentees talking about how it's really hard to get out of bed on Fridays. It might be good if we did something like a pancake breakfast to encourage them to come."
+    },
+    {
+      "start_time": 26.4,
+      "end_time": 28.9,
+      "speaker": "Speaker 0",
+      "text": "I think that's a great idea. Let's try that next week."
+    },
+    {
+      "start_time": 30.3,
+      "end_time": 44.4,
+      "speaker": "Speaker 2",
+      "text": "It might also be because a lot of students have been getting sick now that it's getting colder outside. I've had a number of students come by my office with symptoms like sniffling and coughing. We should put up posters with tips for not getting sick since it's almost flu season, like you know, wash your hands after the bathroom, stuff like that."
+    },
+    {
+      "start_time": 44.9,
+      "end_time": 59.8,
+      "speaker": "Speaker 0",
+      "text": "I think that's a good idea, and it'll be a good reminder for the teachers as well. So, one other thing I wanted to talk about Um, there's a student I've noticed here, John Smith. He's missed seven days already, and it's only November. Does anyone have an idea what's going on with him?"
+    },
+    {
+      "start_time": 60.6,
+      "end_time": 73.2,
+      "speaker": "Speaker 1",
+      "text": "I might be able to fill in the gaps there. I talked to John today, and he's really stressed out. He's been dealing with helping his parents take care of his younger siblings during the day. Um, it might actually be a good idea if he spoke to the guidance counselor a little bit."
+    },
+    {
+      "start_time": 73.8,
+      "end_time": 80.2,
+      "speaker": "Speaker 3",
+      "text": "I can talk to John today if you want to send him to my office after you meet with him. It's a lot to deal with for a middle schooler."
+    },
+    {
+      "start_time": 81.0,
+      "end_time": 90.7,
+      "speaker": "Speaker 4",
+      "text": "Great, thanks. And And I can help out with the family's childcare needs. Uh, I'll look for some free or low-cost resources in the community to share with John, and he can share them with his family."
+    },
+    {
+      "start_time": 91.4,
+      "end_time": 97.1,
+      "speaker": "Speaker 0",
+      "text": "Great. Well, some really good ideas here today. Um, thanks for coming, and if no one has anything else, I think we can wrap up."
+    }
+  ],
+  "full_text": "Hello, everyone. Thank you guys for coming to our weekly student success meeting. Um, and let's just get started. So, I have our list of chronically absent students here, and I've been noticing a troubling trend. Um, a lot of students are skipping on Fridays. Does anyone have any idea what's going on?I've heard some of my mentees talking about how it's really hard to get out of bed on Fridays. It might be good if we did something like a pancake breakfast to encourage them to come.I think that's a great idea. Let's try that next week.It might also be because a lot of students have been getting sick now that it's getting colder outside. I've had a number of students come by my office with symptoms like sniffling and coughing. We should put up posters with tips for not getting sick since it's almost flu season, like you know, wash your hands after the bathroom, stuff like that.I think that's a good idea, and it'll be a good reminder for the teachers as well. So, one other thing I wanted to talk about Um, there's a student I've noticed here, John Smith. He's missed seven days already, and it's only November. Does anyone have an idea what's going on with him?I might be able to fill in the gaps there. I talked to John today, and he's really stressed out. He's been dealing with helping his parents take care of his younger siblings during the day. Um, it might actually be a good idea if he spoke to the guidance counselor a little bit.I can talk to John today if you want to send him to my office after you meet with him. It's a lot to deal with for a middle schooler.Great, thanks. And And I can help out with the family's childcare needs. Uh, I'll look for some free or low-cost resources in the community to share with John, and he can share them with his family.Great. Well, some really good ideas here today. Um, thanks for coming, and if no one has anything else, I think we can wrap up.",
+  "provider": "gemini",
+  "created_at": "2026-09-30T02:08:42.514104",
+  "status": "completed"
+}

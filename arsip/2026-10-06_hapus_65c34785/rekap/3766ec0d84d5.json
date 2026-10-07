@@ -1,0 +1,43 @@
+{
+  "rekap_id": "3766ec0d84d5",
+  "meeting_id": "65c34785-5cb8-4ebc-b555-8e22a86eabf7",
+  "dibuat": "2026-10-06T02:38:51+00:00",
+  "diperbarui": "2026-10-06T02:39:07+00:00",
+  "trace_ids": [
+    "46da619a93124f9496d6b00459be52d9"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Speaker 0 meminta pihak lain untuk melaksanakan pekerjaan tersebut dan memberi tahu setelah selesai.",
+          "kutipan": "go ahead and and and do that work and then let me know.",
+          "chunk_id": 97,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "27:46",
+          "selesai": "27:52",
+          "penanggung_jawab": "",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Speaker 1 akan menambahkan agenda yang lebih menarik pada pertemuan minggu depan.",
+          "kutipan": "I can put more exciting things on the agenda next week",
+          "chunk_id": 98,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "28:21",
+          "selesai": "28:31",
+          "penanggung_jawab": "Speaker 1",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "next week",
+          "status_tenggat": "relatif"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

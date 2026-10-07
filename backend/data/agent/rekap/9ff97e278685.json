@@ -1,0 +1,184 @@
+{
+  "rekap_id": "9ff97e278685",
+  "meeting_id": "42ca5f94-ee9f-46ec-9213-649f5795c894",
+  "dibuat": "2026-10-06T03:03:01+00:00",
+  "diperbarui": "2026-10-06T03:04:41+00:00",
+  "trace_ids": [
+    "882effccebe144849456014f423c4a81"
+  ],
+  "bagian": {
+    "ringkasan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "R1",
+          "isi": "Pembahasan tentang penjadwalan review dan prioritas due 22nd",
+          "kutipan": "That fine yeah like I don't think this is super uber urgent like that the history is there so I I I'll just manually put those up once you do it.",
+          "chunk_id": 35,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "10:23",
+          "selesai": "10:32"
+        },
+        {
+          "id": "R2",
+          "isi": "Pengaturan ulang agenda untuk membahas proses review",
+          "kutipan": "so I I moved around the order in the agenda item because we already just talked about number four review process as oh no we didn't talk about this.",
+          "chunk_id": 36,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "10:35",
+          "selesai": "10:50"
+        },
+        {
+          "id": "R3",
+          "isi": "Tujuan sistem due 22nd adalah mengurangi ketidakpastian dan tekanan waktu",
+          "kutipan": "the purpose of this as far as I 'm concerned is to reduce um, the uncertainty and the amount of time pressure people feel on things like that and the amount of bunching that happens with review requests rather than to have a second place where we bunch everything up and everyone's like uh I need to get this merged by the 22nd because it's got due 22nd on it like you know the the point is to manage our work throughout the month.",
+          "chunk_id": 55,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "15:08",
+          "selesai": "15:29"
+        },
+        {
+          "id": "R4",
+          "isi": "Perlu ada ekspektasi dan komunikasi yang jelas tentang tujuan due 22nd",
+          "kutipan": "No I totally agree with you on the on the purpose of the due 22nd but operationally we should have a clear expectation and a communication on what is the goal.",
+          "chunk_id": 56,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "15:29",
+          "selesai": "15:50"
+        },
+        {
+          "id": "R5",
+          "isi": "Prioritas pekerjaan di dalam tim adalah menyelesaikan tugas sebelum due 22nd",
+          "kutipan": "you try to get things done on before due 22nd and um, if you have a choice to work on one thing versus another thing you work on the due 22nd one first.",
+          "chunk_id": 59,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "16:23",
+          "selesai": "16:55"
+        },
+        {
+          "id": "R6",
+          "isi": "Reviewer harus memprioritaskan tugas due 22nd meskipun ada pekerjaan lain",
+          "kutipan": "when it comes to reviewer I think that gets really complicated because then I think you're saying they they should work on something that's something else and not to due 22nd first a thing first.",
+          "chunk_id": 61,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "17:00",
+          "selesai": "17:11"
+        },
+        {
+          "id": "R7",
+          "isi": "Goal akhir adalah merge issue pada due 22nd untuk menghindari keterlambatan review",
+          "kutipan": "if we said it's in review roll out but we don't control how much work will come back from the review which is why I think the goal should be to have it merged by the 22nd.",
+          "chunk_id": 68,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "18:42",
+          "selesai": "18:53"
+        },
+        {
+          "id": "R8",
+          "isi": "Keputusan untuk menunda diskusi sampai Andre kembali",
+          "kutipan": "Um, yeah I mean maybe we just talk about this again when Andre's back.",
+          "chunk_id": 75,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "20:26",
+          "selesai": "20:29"
+        },
+        {
+          "id": "R9",
+          "isi": "Tim menyelesaikan dua tugas utama dan menunggu review untuk yang lainnya.",
+          "kutipan": "so we finished these two which is great. So, this one was closed. This one was was not um,",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "01:26",
+          "selesai": "01:34"
+        },
+        {
+          "id": "R10",
+          "isi": "Penyelesaian tugas dianggap sukses meski kriteria keberhasilan tidak jelas.",
+          "kutipan": "I think it was by and large I I don't know what success criteria we're we're measuring but I think it was an improvement",
+          "chunk_id": 13,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "04:01",
+          "selesai": "04:16"
+        },
+        {
+          "id": "R11",
+          "isi": "Tugas-tugas yang sudah selesai dianggap berhasil karena banyaknya pekerjaan di GitLab.",
+          "kutipan": "people pick these up. They they pretty much finished them",
+          "chunk_id": 13,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "04:16",
+          "selesai": "04:44"
+        },
+        {
+          "id": "R12",
+          "isi": "Diskusi tentang engineer yang didedikasikan akan dilanjutkan setelah summit.",
+          "kutipan": "So, maybe Sean I could talk to you about it here really quickly which is the dedicated engineer thing",
+          "chunk_id": 15,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "04:45",
+          "selesai": "05:08"
+        },
+        {
+          "id": "R13",
+          "isi": "Tanggung jawab review merge request berada pada penulis MR.",
+          "kutipan": "in general you know people own their own merge request and making sure it gets reviewed",
+          "chunk_id": 44,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "12:45",
+          "selesai": "12:50"
+        }
+      ],
+      "fokus": []
+    },
+    "keputusan": {
+      "status": "tidak_ditemukan",
+      "items": [],
+      "fokus": []
+    },
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Andre akan berbicara dengan Tim untuk menindaklanjuti masalah dedicated engineer.",
+          "kutipan": "he'll talk with Tim further",
+          "chunk_id": 15,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "04:45",
+          "selesai": "05:08",
+          "penanggung_jawab": "Andre",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Sean akan meninjau tech debt masa depan.",
+          "kutipan": "Sean look at future tech debt",
+          "chunk_id": 95,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "27:20",
+          "selesai": "27:32",
+          "penanggung_jawab": "Sean",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 1 akan menambahkan agenda menarik pada pertemuan minggu depan.",
+          "kutipan": "I can put more exciting things on the agenda next week",
+          "chunk_id": 98,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "28:21",
+          "selesai": "28:31",
+          "penanggung_jawab": "Speaker 1",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "next week",
+          "status_tenggat": "relatif"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

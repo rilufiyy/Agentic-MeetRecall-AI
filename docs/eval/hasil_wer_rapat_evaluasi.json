@@ -1,0 +1,231 @@
+{
+  "substitusi": 4,
+  "penghapusan": 1,
+  "penyisipan": 1,
+  "jumlah_kata_acuan": 641,
+  "wer": 0.0094,
+  "jumlah_kata_sistem": 641,
+  "jumlah_segmen_sistem": 18,
+  "jumlah_giliran_acuan": 12,
+  "per_giliran": [
+    {
+      "mulai": "06:00",
+      "speaker_acuan": "Speaker 0",
+      "substitusi": 1,
+      "penghapusan": 0,
+      "penyisipan": 1,
+      "jumlah_kata_acuan": 37,
+      "wer": 0.0541
+    },
+    {
+      "mulai": "06:14",
+      "speaker_acuan": "Speaker 4",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 39,
+      "wer": 0.0
+    },
+    {
+      "mulai": "06:33",
+      "speaker_acuan": "Speaker 0",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 42,
+      "wer": 0.0
+    },
+    {
+      "mulai": "06:49",
+      "speaker_acuan": "Speaker 2",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 59,
+      "wer": 0.0
+    },
+    {
+      "mulai": "07:14",
+      "speaker_acuan": "Speaker 4",
+      "substitusi": 0,
+      "penghapusan": 5,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 53,
+      "wer": 0.0943
+    },
+    {
+      "mulai": "07:35",
+      "speaker_acuan": "Speaker 5",
+      "substitusi": 1,
+      "penghapusan": 0,
+      "penyisipan": 5,
+      "jumlah_kata_acuan": 44,
+      "wer": 0.1364
+    },
+    {
+      "mulai": "07:50",
+      "speaker_acuan": "Speaker 0",
+      "substitusi": 2,
+      "penghapusan": 1,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 71,
+      "wer": 0.0423
+    },
+    {
+      "mulai": "08:19",
+      "speaker_acuan": "Speaker 4",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 36,
+      "wer": 0.0
+    },
+    {
+      "mulai": "08:33",
+      "speaker_acuan": "Speaker 0",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 81,
+      "wer": 0.0
+    },
+    {
+      "mulai": "09:08",
+      "speaker_acuan": "Speaker 2",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 45,
+      "wer": 0.0
+    },
+    {
+      "mulai": "09:30",
+      "speaker_acuan": "Speaker 0",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 133,
+      "wer": 0.0
+    },
+    {
+      "mulai": "10:20",
+      "speaker_acuan": "Speaker 1",
+      "substitusi": 0,
+      "penghapusan": 0,
+      "penyisipan": 0,
+      "jumlah_kata_acuan": 1,
+      "wer": 0.0
+    }
+  ],
+  "akurasi_speaker": 1.0,
+  "speaker_rinci": [
+    {
+      "mulai": "06:00",
+      "acuan": "Speaker 0",
+      "sistem": "Speaker 0",
+      "selisih_detik": 0.8,
+      "benar": true
+    },
+    {
+      "mulai": "06:14",
+      "acuan": "Speaker 4",
+      "sistem": "Speaker 4",
+      "selisih_detik": 0.2,
+      "benar": true
+    },
+    {
+      "mulai": "06:33",
+      "acuan": "Speaker 0",
+      "sistem": "Speaker 0",
+      "selisih_detik": 0.1,
+      "benar": true
+    },
+    {
+      "mulai": "06:49",
+      "acuan": "Speaker 2",
+      "sistem": "Speaker 2",
+      "selisih_detik": 0.0,
+      "benar": true
+    },
+    {
+      "mulai": "07:14",
+      "acuan": "Speaker 4",
+      "sistem": "Speaker 4",
+      "selisih_detik": 0.0,
+      "benar": true
+    },
+    {
+      "mulai": "07:35",
+      "acuan": "Speaker 5",
+      "sistem": "Speaker 5",
+      "selisih_detik": 0.3,
+      "benar": true
+    },
+    {
+      "mulai": "07:50",
+      "acuan": "Speaker 0",
+      "sistem": "Speaker 0",
+      "selisih_detik": 0.3,
+      "benar": true
+    },
+    {
+      "mulai": "08:19",
+      "acuan": "Speaker 4",
+      "sistem": "Speaker 4",
+      "selisih_detik": 0.3,
+      "benar": true
+    },
+    {
+      "mulai": "08:33",
+      "acuan": "Speaker 0",
+      "sistem": "Speaker 0",
+      "selisih_detik": 0.3,
+      "benar": true
+    },
+    {
+      "mulai": "09:08",
+      "acuan": "Speaker 2",
+      "sistem": "Speaker 2",
+      "selisih_detik": 0.3,
+      "benar": true
+    },
+    {
+      "mulai": "09:30",
+      "acuan": "Speaker 0",
+      "sistem": "Speaker 0",
+      "selisih_detik": 0.2,
+      "benar": true
+    },
+    {
+      "mulai": "10:20",
+      "acuan": "Speaker 1",
+      "sistem": "Speaker 1",
+      "selisih_detik": 0.1,
+      "benar": true
+    }
+  ],
+  "perbedaan": [
+    [
+      "ganti",
+      "effort",
+      "kaum milenial"
+    ],
+    [
+      "ganti",
+      "iya",
+      "sekian"
+    ],
+    [
+      "ganti",
+      "reward tersebut",
+      "walaupun"
+    ],
+    [
+      "ganti",
+      "soal",
+      "selalu"
+    ]
+  ],
+  "meeting_id": "0653d0f8-0c12-47c9-8dc8-5855fad68819",
+  "provider": "gemini"
+}

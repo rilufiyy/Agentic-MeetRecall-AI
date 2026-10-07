@@ -1,0 +1,168 @@
+{
+  "rekap_id": "59e46b53b348",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-07T03:11:42+00:00",
+  "diperbarui": "2026-10-07T03:12:01+00:00",
+  "trace_ids": [
+    "846971f0ea054aa3a45aa25c6a769c7a"
+  ],
+  "bagian": {
+    "ringkasan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "R1",
+          "isi": "Tim dan Melinda terlambat, namun agenda masih banyak dibahas.",
+          "kutipan": "Tim and Melinda are running late.",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:10",
+          "selesai": "00:12"
+        },
+        {
+          "id": "R2",
+          "isi": "Ginger Cola diposisikan sebagai minuman kesehatan dan energi.",
+          "kutipan": "we have decided to pitch the new Ginger Cola as a health and energy drink.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:51",
+          "selesai": "00:58"
+        },
+        {
+          "id": "R3",
+          "isi": "Ginger Cola memiliki kalori rendah dan cocok untuk olahraga.",
+          "kutipan": "It has very low calories. It's perfect for working out.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "01:19",
+          "selesai": "01:21"
+        },
+        {
+          "id": "R4",
+          "isi": "Strategi promosi akan melibatkan selebriti dari Japan Baseball League.",
+          "kutipan": "But we are planning to have a power hitter from the Japan Baseball League as a celebrity endorsement.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "01:41",
+          "selesai": "01:49"
+        },
+        {
+          "id": "R5",
+          "isi": "Setiap anggota memiliki tugas terkait acara charity walkathon.",
+          "kutipan": "I have sent around an action list for each of you to take a look at.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "02:29",
+          "selesai": "02:34"
+        },
+        {
+          "id": "R6",
+          "isi": "Kegiatan charity walkathon dianggap penting dan inovatif.",
+          "kutipan": "This has been at the top of all our agendas. And we have come up with some pretty innovative ideas.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "03:04",
+          "selesai": "03:13"
+        }
+      ],
+      "fokus": []
+    },
+    "keputusan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "K1",
+          "isi": "Tim memutuskan untuk memasarkan Ginger Cola sebagai minuman kesehatan dan energi.",
+          "kutipan": "we have decided to pitch the new Ginger Cola as a health and energy drink.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:51",
+          "selesai": "00:58"
+        }
+      ],
+      "fokus": []
+    },
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Jason akan mencatat rapat hari ini",
+          "kutipan": "Jason, can you please take the minutes today?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:20",
+          "selesai": "00:24",
+          "penanggung_jawab": "Jason",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Carrie akan memberikan update strategi pemasaran Ginger Cola",
+          "kutipan": "Carrie, can you please give us an update on the marketing strategy for our new beverage, Ginger Cola?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:42",
+          "selesai": "00:50",
+          "penanggung_jawab": "Carrie",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Speaker 2 akan siap mempresentasikan rencana pada rapat berikutnya",
+          "kutipan": "I will be ready to present to everyone then",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "02:19",
+          "selesai": "02:24",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Tim akan menyisihkan waktu lebih di rapat berikutnya untuk tinjauan lebih mendalam",
+          "kutipan": "let's set aside more time at the next meeting for a more in-depth look at what you have planned",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "02:00",
+          "selesai": "02:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    },
+    "isu_terbuka": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "I1",
+          "isi": "Masih ada beberapa hal yang perlu diselesaikan terkait strategi iklan dan promosi.",
+          "kutipan": "We still have a few things to work out.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "01:37",
+          "selesai": "01:40"
+        },
+        {
+          "id": "I2",
+          "isi": "Perlu diselesaikan detail-detail tertentu dalam rencana promosi.",
+          "kutipan": "We still have to iron out some details.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "01:50",
+          "selesai": "01:53"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

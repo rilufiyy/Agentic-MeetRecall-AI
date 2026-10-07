@@ -1,0 +1,69 @@
+{
+  "rekap_id": "2be1a9817eaf",
+  "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+  "dibuat": "2026-10-05T08:16:50+00:00",
+  "diperbarui": "2026-10-05T08:16:51+00:00",
+  "trace_ids": [
+    "5cb5572972994a24b4bbba1ed5179d3a"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Jason akan mencatat rapat hari ini.",
+          "kutipan": "Jason, can you please take the minutes today?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:20",
+          "selesai": "00:24",
+          "penanggung_jawab": "Jason",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Carrie akan memberikan update strategi pemasaran Ginger Cola.",
+          "kutipan": "Carrie, can you please give us an update on the marketing strategy for our new beverage, Ginger Cola?",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:42",
+          "selesai": "00:50",
+          "penanggung_jawab": "Carrie",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Menetapkan waktu tambahan pada pertemuan berikutnya untuk membahas rencana lebih detail.",
+          "kutipan": "Well, let's set aside more time at the next meeting for a more in-depth look at what you have planned.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "02:00",
+          "selesai": "02:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Speaker 2 akan siap mempresentasikan kepada semua orang.",
+          "kutipan": "I will be ready to present to everyone then.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "02:19",
+          "selesai": "02:24",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

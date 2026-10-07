@@ -1,0 +1,17 @@
+{
+ "tasks": 3,
+ "approvals": 10,
+ "approvals_status": {
+  "dieksekusi": 8,
+  "kedaluwarsa": 1,
+  "menunggu": 1
+ },
+ "rekap_files": 30,
+ "laporan_dirs": 9,
+ "outbox_files": 1,
+ "trace_lines": 404,
+ "meetings": 5,
+ "agent_db_sha": "2f4f5cf57c600cd3",
+ "meetings_json_sha": "b079a2cc56dea916",
+ "sources_sha": "09150351e55ebae7"
+}

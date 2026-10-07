@@ -1,0 +1,34 @@
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+pydantic>=2.0.0
+
+torch>=2.7.0
+torchaudio>=2.7.0
+
+transformers>=4.40.0
+sentence-transformers>=2.7.0
+accelerate>=0.30.0
+huggingface_hub>=0.23.0
+
+pyannote.audio>=3.1.1
+soundfile>=0.12.1
+ffmpeg-python>=0.2.0
+
+faiss-cpu>=1.7.4
+
+numpy>=1.26.0
+
+groq>=0.30.0
+google-genai>=2.25.0
+
+scipy>=1.11.0
+
+# retrieval experiments (charts in scripts/evaluate_retrieval.py) and tests
+matplotlib>=3.8.0
+pytest>=8.0.0
+# W78 agent: PDF report (fpdf2, https://py-pdf.github.io/fpdf2/)
+fpdf2==2.8.9
+# W78 agent: DOCX export (python-docx, https://python-docx.readthedocs.io/)
+python-docx==1.2.0

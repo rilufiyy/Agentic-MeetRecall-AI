@@ -1,0 +1,347 @@
+{
+  "meeting_id": "c69b07e4-27e4-4e7c-8cb8-8eef47475245",
+  "filename": "sprint_review_portal_mitra.txt",
+  "duration": 448.0,
+  "segments": [
+    {
+      "start_time": 4.0,
+      "end_time": 11.0,
+      "speaker": "Rina",
+      "text": "Selamat pagi semua, kita mulai sprint review untuk sprint 14 Portal Mitra ya."
+    },
+    {
+      "start_time": 11.0,
+      "end_time": 20.0,
+      "speaker": "Rina",
+      "text": "Agendanya ada empat: status tiket, hasil QA, rencana rilis, lalu risiko dan anggaran."
+    },
+    {
+      "start_time": 20.0,
+      "end_time": 23.0,
+      "speaker": "Budi",
+      "text": "Oke, siap."
+    },
+    {
+      "start_time": 23.0,
+      "end_time": 30.0,
+      "speaker": "Rina",
+      "text": "Dimas, mulai dari backend dulu. Tiket MR-218 gimana perkembangannya?"
+    },
+    {
+      "start_time": 30.0,
+      "end_time": 41.0,
+      "speaker": "Dimas",
+      "text": "MR-218 itu isu halaman login yang lambat. Waktu respons p95 sekarang masih di 850 milidetik."
+    },
+    {
+      "start_time": 41.0,
+      "end_time": 52.0,
+      "speaker": "Dimas",
+      "text": "Targetnya di bawah 300 milidetik. Penyebab utamanya query ke tabel sesi yang belum punya index."
+    },
+    {
+      "start_time": 52.0,
+      "end_time": 65.0,
+      "speaker": "Dimas",
+      "text": "Saya sudah tambahkan index komposit di kolom user_id dan expired_at, hasil uji di staging turun jadi 280 milidetik."
+    },
+    {
+      "start_time": 65.0,
+      "end_time": 72.0,
+      "speaker": "Rina",
+      "text": "Bagus. Berarti autentikasi yang lemot itu tinggal nunggu deploy ke production?"
+    },
+    {
+      "start_time": 72.0,
+      "end_time": 82.0,
+      "speaker": "Dimas",
+      "text": "Betul, saya yang pegang sampai deploy. Rencananya naik bareng rilis v2.4.1."
+    },
+    {
+      "start_time": 82.0,
+      "end_time": 88.0,
+      "speaker": "Rina",
+      "text": "Lalu MR-230, fitur ekspor laporan ke PDF?"
+    },
+    {
+      "start_time": 88.0,
+      "end_time": 100.0,
+      "speaker": "Dimas",
+      "text": "MR-230 masih jalan sekitar 60 persen. Library render PDF yang lama tidak mendukung huruf Arab dan Mandarin untuk nama mitra."
+    },
+    {
+      "start_time": 100.0,
+      "end_time": 111.0,
+      "speaker": "Dimas",
+      "text": "Kami ganti ke library baru, tapi layout tabel masih berantakan kalau kolomnya lebih dari delapan."
+    },
+    {
+      "start_time": 111.0,
+      "end_time": 120.0,
+      "speaker": "Ayu",
+      "text": "Dari sisi desain, saya bisa bikin versi layout landscape untuk tabel lebar, biar kolomnya muat."
+    },
+    {
+      "start_time": 120.0,
+      "end_time": 126.0,
+      "speaker": "Rina",
+      "text": "Oke, Ayu tolong siapkan mockup landscape paling lambat Rabu ya."
+    },
+    {
+      "start_time": 126.0,
+      "end_time": 130.0,
+      "speaker": "Ayu",
+      "text": "Siap, Rabu saya kirim di channel desain."
+    },
+    {
+      "start_time": 130.0,
+      "end_time": 135.0,
+      "speaker": "Rina",
+      "text": "Sari, hasil QA minggu ini bagaimana?"
+    },
+    {
+      "start_time": 135.0,
+      "end_time": 143.0,
+      "speaker": "Sari",
+      "text": "Total ada 37 test case regresi, 34 lulus dan 3 gagal."
+    },
+    {
+      "start_time": 143.0,
+      "end_time": 154.0,
+      "speaker": "Sari",
+      "text": "Yang paling kritis MR-241, notifikasi email terkirim dua kali setiap mitra mengubah alamat penagihan."
+    },
+    {
+      "start_time": 154.0,
+      "end_time": 165.0,
+      "speaker": "Sari",
+      "text": "Sepertinya event perubahan data dipublikasikan dua kali oleh service billing, jadi consumer notifikasi memproses keduanya."
+    },
+    {
+      "start_time": 165.0,
+      "end_time": 176.0,
+      "speaker": "Dimas",
+      "text": "Itu kemungkinan karena retry di message queue tidak idempoten. Saya bisa tambahkan deduplication key berdasarkan event_id."
+    },
+    {
+      "start_time": 176.0,
+      "end_time": 185.0,
+      "speaker": "Rina",
+      "text": "Tolong prioritaskan ya, karena komplain soal email ganda sudah masuk ke tim customer success."
+    },
+    {
+      "start_time": 185.0,
+      "end_time": 193.0,
+      "speaker": "Sari",
+      "text": "Dua test case gagal lainnya minor, soal tooltip yang terpotong di layar kecil."
+    },
+    {
+      "start_time": 193.0,
+      "end_time": 201.0,
+      "speaker": "Ayu",
+      "text": "Tooltip terpotong itu dari saya, nanti saya perbaiki breakpoint untuk layar di bawah 360 piksel."
+    },
+    {
+      "start_time": 201.0,
+      "end_time": 205.0,
+      "speaker": "Rina",
+      "text": "Oke. Budi, dari tim data ada update?"
+    },
+    {
+      "start_time": 205.0,
+      "end_time": 216.0,
+      "speaker": "Budi",
+      "text": "Ada. Dashboard retensi mitra sudah jadi, datanya diperbarui setiap jam lewat pipeline ETL di n8n."
+    },
+    {
+      "start_time": 216.0,
+      "end_time": 228.0,
+      "speaker": "Budi",
+      "text": "Temuan menarik, mitra yang aktif memakai fitur ekspor laporan punya tingkat retensi tiga bulan 18 persen lebih tinggi."
+    },
+    {
+      "start_time": 228.0,
+      "end_time": 233.0,
+      "speaker": "Rina",
+      "text": "Wah, itu argumen bagus untuk memprioritaskan MR-230."
+    },
+    {
+      "start_time": 233.0,
+      "end_time": 244.0,
+      "speaker": "Budi",
+      "text": "Betul. Tapi catatan, sampelnya baru 412 mitra, jadi belum bisa disimpulkan sebagai hubungan sebab akibat."
+    },
+    {
+      "start_time": 244.0,
+      "end_time": 252.0,
+      "speaker": "Rina",
+      "text": "Noted. Sekarang rencana rilis. Kita sepakat v2.4.1 rilis tanggal 14 Oktober?"
+    },
+    {
+      "start_time": 252.0,
+      "end_time": 257.0,
+      "speaker": "Dimas",
+      "text": "Setuju, asal code freeze tanggal 10 Oktober."
+    },
+    {
+      "start_time": 257.0,
+      "end_time": 265.0,
+      "speaker": "Sari",
+      "text": "Dari QA butuh minimal tiga hari kerja setelah code freeze untuk regresi penuh."
+    },
+    {
+      "start_time": 265.0,
+      "end_time": 277.0,
+      "speaker": "Rina",
+      "text": "Oke, diputuskan: code freeze 10 Oktober, regresi 11 sampai 13 Oktober, rilis v2.4.1 tanggal 14 Oktober."
+    },
+    {
+      "start_time": 277.0,
+      "end_time": 287.0,
+      "speaker": "Rina",
+      "text": "Isi rilisnya perbaikan login MR-218, perbaikan notifikasi ganda MR-241, dan perbaikan tooltip."
+    },
+    {
+      "start_time": 287.0,
+      "end_time": 296.0,
+      "speaker": "Rina",
+      "text": "MR-230 ekspor PDF tidak masuk v2.4.1, kita geser ke v2.5 bulan November."
+    },
+    {
+      "start_time": 296.0,
+      "end_time": 301.0,
+      "speaker": "Ayu",
+      "text": "Berarti mockup landscape tetap saya kerjakan tapi tidak buru-buru ya?"
+    },
+    {
+      "start_time": 301.0,
+      "end_time": 307.0,
+      "speaker": "Rina",
+      "text": "Tetap Rabu saja, supaya Dimas bisa mulai estimasi lebih awal."
+    },
+    {
+      "start_time": 307.0,
+      "end_time": 311.0,
+      "speaker": "Rina",
+      "text": "Terakhir, risiko dan anggaran."
+    },
+    {
+      "start_time": 311.0,
+      "end_time": 322.0,
+      "speaker": "Dimas",
+      "text": "Risiko terbesar ada di payment gateway PayLink. Mereka akan menonaktifkan API versi 1 per 1 Desember."
+    },
+    {
+      "start_time": 322.0,
+      "end_time": 330.0,
+      "speaker": "Dimas",
+      "text": "Kalau kita belum migrasi ke API versi 2, pembayaran dari mitra akan gagal total."
+    },
+    {
+      "start_time": 330.0,
+      "end_time": 333.0,
+      "speaker": "Rina",
+      "text": "Estimasi migrasinya berapa lama?"
+    },
+    {
+      "start_time": 333.0,
+      "end_time": 340.0,
+      "speaker": "Dimas",
+      "text": "Kurang lebih dua sprint, termasuk pengujian di sandbox PayLink."
+    },
+    {
+      "start_time": 340.0,
+      "end_time": 349.0,
+      "speaker": "Rina",
+      "text": "Oke, migrasi PayLink kita jadikan prioritas pertama di sprint 15 dan 16. Tolong buatkan tiketnya, Dimas."
+    },
+    {
+      "start_time": 349.0,
+      "end_time": 353.0,
+      "speaker": "Dimas",
+      "text": "Siap, nanti saya buat dengan nomor MR-255."
+    },
+    {
+      "start_time": 353.0,
+      "end_time": 362.0,
+      "speaker": "Budi",
+      "text": "Soal anggaran, biaya server cloud bulan lalu naik sekitar 20 persen dibanding bulan sebelumnya."
+    },
+    {
+      "start_time": 362.0,
+      "end_time": 370.0,
+      "speaker": "Budi",
+      "text": "Penyebabnya instance database replika yang lupa dimatikan setelah uji beban bulan lalu."
+    },
+    {
+      "start_time": 370.0,
+      "end_time": 377.0,
+      "speaker": "Rina",
+      "text": "Tolong matikan hari ini juga, dan pasang alert kalau biaya harian melewati batas."
+    },
+    {
+      "start_time": 377.0,
+      "end_time": 384.0,
+      "speaker": "Budi",
+      "text": "Siap, batas alert saya set di 1,5 juta rupiah per hari."
+    },
+    {
+      "start_time": 384.0,
+      "end_time": 393.0,
+      "speaker": "Sari",
+      "text": "Satu lagi, target SLA uptime kita 99,5 persen. Bulan lalu tercapai 99,62 persen."
+    },
+    {
+      "start_time": 393.0,
+      "end_time": 398.0,
+      "speaker": "Rina",
+      "text": "Bagus, pertahankan. Ada lagi sebelum kita tutup?"
+    },
+    {
+      "start_time": 398.0,
+      "end_time": 407.0,
+      "speaker": "Ayu",
+      "text": "Saya mau usul, retrospektif sprint dipindah ke Jumat sore supaya tidak bentrok dengan demo klien hari Kamis."
+    },
+    {
+      "start_time": 407.0,
+      "end_time": 414.0,
+      "speaker": "Rina",
+      "text": "Setuju, mulai sprint 15 retro pindah ke Jumat jam tiga sore."
+    },
+    {
+      "start_time": 414.0,
+      "end_time": 426.0,
+      "speaker": "Rina",
+      "text": "Rangkuman tindak lanjut: Dimas deploy MR-218 dan perbaiki MR-241 dengan deduplication key, Ayu kirim mockup landscape hari Rabu."
+    },
+    {
+      "start_time": 426.0,
+      "end_time": 435.0,
+      "speaker": "Rina",
+      "text": "Budi matikan database replika dan pasang alert biaya, Dimas buat tiket MR-255 untuk migrasi PayLink."
+    },
+    {
+      "start_time": 435.0,
+      "end_time": 439.0,
+      "speaker": "Rina",
+      "text": "Terima kasih semuanya, sampai ketemu di planning sprint 15."
+    },
+    {
+      "start_time": 439.0,
+      "end_time": 440.0,
+      "speaker": "Budi",
+      "text": "Makasih."
+    },
+    {
+      "start_time": 440.0,
+      "end_time": 448.0,
+      "speaker": "Sari",
+      "text": "Terima kasih."
+    }
+  ],
+  "full_text": "Selamat pagi semua, kita mulai sprint review untuk sprint 14 Portal Mitra ya. Agendanya ada empat: status tiket, hasil QA, rencana rilis, lalu risiko dan anggaran. Oke, siap. Dimas, mulai dari backend dulu. Tiket MR-218 gimana perkembangannya? MR-218 itu isu halaman login yang lambat. Waktu respons p95 sekarang masih di 850 milidetik. Targetnya di bawah 300 milidetik. Penyebab utamanya query ke tabel sesi yang belum punya index. Saya sudah tambahkan index komposit di kolom user_id dan expired_at, hasil uji di staging turun jadi 280 milidetik. Bagus. Berarti autentikasi yang lemot itu tinggal nunggu deploy ke production? Betul, saya yang pegang sampai deploy. Rencananya naik bareng rilis v2.4.1. Lalu MR-230, fitur ekspor laporan ke PDF? MR-230 masih jalan sekitar 60 persen. Library render PDF yang lama tidak mendukung huruf Arab dan Mandarin untuk nama mitra. Kami ganti ke library baru, tapi layout tabel masih berantakan kalau kolomnya lebih dari delapan. Dari sisi desain, saya bisa bikin versi layout landscape untuk tabel lebar, biar kolomnya muat. Oke, Ayu tolong siapkan mockup landscape paling lambat Rabu ya. Siap, Rabu saya kirim di channel desain. Sari, hasil QA minggu ini bagaimana? Total ada 37 test case regresi, 34 lulus dan 3 gagal. Yang paling kritis MR-241, notifikasi email terkirim dua kali setiap mitra mengubah alamat penagihan. Sepertinya event perubahan data dipublikasikan dua kali oleh service billing, jadi consumer notifikasi memproses keduanya. Itu kemungkinan karena retry di message queue tidak idempoten. Saya bisa tambahkan deduplication key berdasarkan event_id. Tolong prioritaskan ya, karena komplain soal email ganda sudah masuk ke tim customer success. Dua test case gagal lainnya minor, soal tooltip yang terpotong di layar kecil. Tooltip terpotong itu dari saya, nanti saya perbaiki breakpoint untuk layar di bawah 360 piksel. Oke. Budi, dari tim data ada update? Ada. Dashboard retensi mitra sudah jadi, datanya diperbarui setiap jam lewat pipeline ETL di n8n. Temuan menarik, mitra yang aktif memakai fitur ekspor laporan punya tingkat retensi tiga bulan 18 persen lebih tinggi. Wah, itu argumen bagus untuk memprioritaskan MR-230. Betul. Tapi catatan, sampelnya baru 412 mitra, jadi belum bisa disimpulkan sebagai hubungan sebab akibat. Noted. Sekarang rencana rilis. Kita sepakat v2.4.1 rilis tanggal 14 Oktober? Setuju, asal code freeze tanggal 10 Oktober. Dari QA butuh minimal tiga hari kerja setelah code freeze untuk regresi penuh. Oke, diputuskan: code freeze 10 Oktober, regresi 11 sampai 13 Oktober, rilis v2.4.1 tanggal 14 Oktober. Isi rilisnya perbaikan login MR-218, perbaikan notifikasi ganda MR-241, dan perbaikan tooltip. MR-230 ekspor PDF tidak masuk v2.4.1, kita geser ke v2.5 bulan November. Berarti mockup landscape tetap saya kerjakan tapi tidak buru-buru ya? Tetap Rabu saja, supaya Dimas bisa mulai estimasi lebih awal. Terakhir, risiko dan anggaran. Risiko terbesar ada di payment gateway PayLink. Mereka akan menonaktifkan API versi 1 per 1 Desember. Kalau kita belum migrasi ke API versi 2, pembayaran dari mitra akan gagal total. Estimasi migrasinya berapa lama? Kurang lebih dua sprint, termasuk pengujian di sandbox PayLink. Oke, migrasi PayLink kita jadikan prioritas pertama di sprint 15 dan 16. Tolong buatkan tiketnya, Dimas. Siap, nanti saya buat dengan nomor MR-255. Soal anggaran, biaya server cloud bulan lalu naik sekitar 20 persen dibanding bulan sebelumnya. Penyebabnya instance database replika yang lupa dimatikan setelah uji beban bulan lalu. Tolong matikan hari ini juga, dan pasang alert kalau biaya harian melewati batas. Siap, batas alert saya set di 1,5 juta rupiah per hari. Satu lagi, target SLA uptime kita 99,5 persen. Bulan lalu tercapai 99,62 persen. Bagus, pertahankan. Ada lagi sebelum kita tutup? Saya mau usul, retrospektif sprint dipindah ke Jumat sore supaya tidak bentrok dengan demo klien hari Kamis. Setuju, mulai sprint 15 retro pindah ke Jumat jam tiga sore. Rangkuman tindak lanjut: Dimas deploy MR-218 dan perbaiki MR-241 dengan deduplication key, Ayu kirim mockup landscape hari Rabu. Budi matikan database replika dan pasang alert biaya, Dimas buat tiket MR-255 untuk migrasi PayLink. Terima kasih semuanya, sampai ketemu di planning sprint 15. Makasih. Terima kasih.",
+  "provider": "import",
+  "created_at": "2026-09-29T03:19:51.374503",
+  "status": "completed"
+}

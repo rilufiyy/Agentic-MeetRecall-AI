@@ -1,0 +1,25 @@
+# Template teks acuan (ground truth) untuk skrip backend/scripts/eval_wer.py
+#
+# Cara mengisi:
+# 1. Pilih rentang 3 sampai 5 menit yang jelas audionya. Tulis meeting_id dan rentang di bawah.
+# 2. Dengarkan audio, tulis apa yang BENAR-BENAR diucapkan (verbatim), bukan versi yang dirapikan.
+#    Pertahankan kata isian (um, uh, eh) bila terdengar, atau putuskan di awal untuk membuangnya dan catat di sini.
+# 3. Satu blok per giliran bicara: baris "MM:SS - Speaker N (keterangan)", lalu teksnya di baris berikutnya.
+#    N harus sama dengan label speaker di transkrip sistem agar akurasi speaker bisa dihitung.
+# 4. Isi hanya teks. Baris berawalan # diabaikan skrip.
+# 5. Catat siapa yang menyusun dan apakah ada pemeriksa kedua. Acuan dari satu orang tanpa pemeriksa kedua
+#    masih bisa salah dengar.
+#
+# Aturan normalisasi yang dipakai skrip (sama untuk acuan dan hasil sistem):
+# huruf kecil; tanda baca dibuang; titik dan koma di dalam angka dihapus (50.000 jadi 50000, 06.00 jadi 0600);
+# tanda hubung jadi spasi; kata isian TIDAK dibuang; angka tidak dieja ulang.
+#
+# meeting_id : <isi>
+# rentang    : <MM:SS sampai MM:SS>
+# sumber     : <siapa, tanggal, cara menyusun>
+
+00:00 - Speaker 0 (keterangan bebas)
+Teks verbatim giliran pertama.
+
+00:15 - Speaker 1 (keterangan bebas)
+Teks verbatim giliran kedua.

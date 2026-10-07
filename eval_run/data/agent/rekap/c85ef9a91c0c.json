@@ -1,0 +1,108 @@
+{
+  "rekap_id": "c85ef9a91c0c",
+  "meeting_id": "c69b07e4-27e4-4e7c-8cb8-8eef47475245",
+  "dibuat": "2026-10-07T07:18:09+00:00",
+  "diperbarui": "2026-10-07T07:18:13+00:00",
+  "trace_ids": [
+    "97621e4a843540a0b6849717b5b20a9a"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Ayu diminta menyiapkan mockup layout landscape untuk tabel lebar paling lambat hari Rabu.",
+          "kutipan": "Dari sisi desain, saya bisa bikin versi layout landscape untuk tabel lebar, biar kolomnya muat.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Ayu",
+          "mulai": "01:51",
+          "selesai": "02:00",
+          "penanggung_jawab": "Ayu",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "paling lambat Rabu",
+          "status_tenggat": "relatif"
+        },
+        {
+          "id": "A2",
+          "isi": "Dimas bertanggung jawab untuk melakukan deploy MR-218 dan memperbaiki MR-241 dengan deduplication key.",
+          "kutipan": "Rangkuman tindak lanjut: Dimas deploy MR-218 dan perbaiki MR-241 dengan deduplication key,",
+          "chunk_id": 11,
+          "speaker_kutipan": "Rina",
+          "mulai": "06:54",
+          "selesai": "07:06",
+          "penanggung_jawab": "Dimas",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Budi diminta mematikan database replika dan memasang alert biaya harian.",
+          "kutipan": "Tolong matikan hari ini juga, dan pasang alert kalau biaya harian melewati batas.",
+          "chunk_id": 10,
+          "speaker_kutipan": "Rina",
+          "mulai": "06:10",
+          "selesai": "06:17",
+          "penanggung_jawab": "Budi",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Dimas diminta membuat tiket MR-255 untuk migrasi PayLink.",
+          "kutipan": "Oke, migrasi PayLink kita jadikan prioritas pertama di sprint 15 dan 16. Tolong buatkan tiketnya, Dimas.",
+          "chunk_id": 9,
+          "speaker_kutipan": "Rina",
+          "mulai": "05:40",
+          "selesai": "05:49",
+          "penanggung_jawab": "Dimas",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A5",
+          "isi": "Rina menetapkan jadwal code freeze, regresi, dan rilis v2.4.1 pada tanggal 10, 11‑13, dan 14 Oktober.",
+          "kutipan": "Oke, diputuskan: code freeze 10 Oktober, regresi 11 sampai 13 Oktober, rilis v2.4.1 tanggal 14 Oktober.",
+          "chunk_id": 6,
+          "speaker_kutipan": "Rina",
+          "mulai": "04:25",
+          "selesai": "04:37",
+          "penanggung_jawab": "Rina",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A6",
+          "isi": "Rina menegaskan migrasi PayLink menjadi prioritas pertama di sprint 15 dan 16.",
+          "kutipan": "migrasi PayLink kita jadikan prioritas pertama di sprint 15 dan 16.",
+          "chunk_id": 8,
+          "speaker_kutipan": "Rina",
+          "mulai": "05:40",
+          "selesai": "05:49",
+          "penanggung_jawab": "Rina",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A7",
+          "isi": "Ayu mengusulkan memindahkan retrospektif sprint ke Jumat sore jam tiga.",
+          "kutipan": "Saya mau usul, retrospektif sprint dipindah ke Jumat sore supaya tidak bentrok dengan demo klien hari Kamis.",
+          "chunk_id": 11,
+          "speaker_kutipan": "Ayu",
+          "mulai": "06:38",
+          "selesai": "06:47",
+          "penanggung_jawab": "Ayu",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

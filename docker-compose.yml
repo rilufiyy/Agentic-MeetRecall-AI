@@ -1,0 +1,55 @@
+services:
+  backend:
+    # W78: thin image over meetrecall-backend:latest (W6) that adds fpdf2 and python-docx.
+    # Build the W6 base once with backend/Dockerfile if it does not exist on this machine.
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.agent
+    image: meetrecall-agent:latest
+    container_name: meetrecall-agent-backend
+    ports:
+      - "8090:8000"
+    volumes:
+      - ./backend:/app             # W78: code from the host, so edits need no rebuild
+      - ./backend/data:/app/data   # W78: bind mount, meetings, rekap and traces stay visible on the host
+      - meetrecall-uploads:/app/uploads
+      - meetrecall-hf-cache:/root/.cache/huggingface
+    env_file:
+      - ./backend/.env
+    # CPU only: TORCH_INDEX_URL above installs CPU PyTorch wheels.
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://127.0.0.1:8000/health || exit 1"]
+      interval: 20s
+      timeout: 10s
+      retries: 8
+      start_period: 180s
+    restart: unless-stopped
+    networks:
+      - meetrecall-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: meetrecall-frontend:latest
+    container_name: meetrecall-agent-frontend
+    ports:
+      - "8503:8501"
+    volumes:
+      - ./frontend:/app            # W78: pages from the host (adds 5_Agent.py without a rebuild)
+    environment:
+      BACKEND_URL: http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - meetrecall-net
+
+volumes:
+  meetrecall-uploads:
+  meetrecall-hf-cache:
+
+networks:
+  meetrecall-net:
+    driver: bridge

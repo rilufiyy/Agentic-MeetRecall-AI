@@ -1,0 +1,41 @@
+# Teks acuan (ground truth) untuk pengukuran WER
+# meeting_id : 0653d0f8-0c12-47c9-8dc8-5855fad68819 (Rapat Evaluasi Kinerja Pegawai, ID)
+# rentang    : 06:00 sampai 10:20
+# sumber     : disusun pengguna dengan mendengarkan audio, 2026-10-06. Belum ada pemeriksa kedua.
+# format     : baris "MM:SS - Speaker N (keterangan)" lalu teks verbatim; baris berawalan # diabaikan.
+
+06:00 - Speaker 0 (Aleka / Moderator)
+Nah betul sekali Ibu Yuli. Dari keterlambatan yang mereka lakukan mereka juga mendapatkan potongan gaji yang cukup besar. Seperti saya bilang sebelumnya, gaji yang diberikan sangat tidak sesuai dengan effort yang mereka berikan di hari libur tadi.
+
+06:14 - Speaker 4 (Ibu Luthfia / Staf)
+Baik, saya izin menambahkan juga bahwa banyak sekali pegawai yang bekerja dengan rajin dan disiplin sebelumnya. Namun karena tidak adanya pemberian motivasi berupa reward atau sedikit kenaikan gaji, tingkat kinerja mereka semakin menurun dari hari ke hari. Terima kasih.
+
+06:33 - Speaker 0 (Aleka / Moderator)
+Baik, saya rasa sepertinya sudah tidak ada yang ingin menambahkan lagi ya. Oke, terima kasih kepada staf produksi dan staf pemasaran yang tadi sudah menyampaikan pernyataan-pernyataannya. Selanjutnya kepada Bapak Wildan apakah dari pernyataan staf-staf tadi ada yang ingin Bapak sampaikan?
+
+06:49 - Speaker 2 (Pak Wildan / Direktur Utama)
+Baik, setelah mendengarkan pernyataan dari staf tadi saya rasa itu adalah masalah yang cukup berisiko bagi keberlangsungan perusahaan ini ke depannya. Dan selama ini memang masalah tersebut terjadi karena kurang adanya pantauan dan perhatian. Solusi dari saya sendiri mungkin kita akan menerapkan kebijakan perusahaan yang baru mengenai kedisiplinan kedisiplinan pegawai. Apakah ada saran atau solusi dari masing-masing divisi?
+
+07:14 - Speaker 4 (Ibu Luthfia / Staf)
+Ehm, izin menambahkan solusi Pak. Jadi saya setuju dengan pembentukan kebijakan baru yang Bapak sampaikan tadi. Nah, mungkin pemberian kebijakan ini bisa berupa ketegasan untuk kantor agar tidak memberikan pekerjaan di luar jam kerja terutama untuk kepala divisi masing-masing bagian agar memberi hak libur bagi para pegawainya. Sekian dari saya, terima kasih.
+
+07:35 - Speaker 5 (Ibu Dela / Staf)
+Iya betul sekali, di sini saya izin menambahkan juga mungkin jika memang benar-benar ada pekerjaan yang urgen di hari libur, pegawai bisa diberikan reward. Dan untuk hari cuti yang kurang bisa ditambahkan saja Pak. Misalnya dari 1 minggu setahun menjadi 1 bulan setahun.
+
+07:50 - Speaker 0 (Aleka / Moderator)
+Saya setuju apa yang dikatakan oleh Ibu Shafina dan Ibu Dela bahwa berikan juga reward rutin bagi para pegawai yang reward tersebut pun tidak harus soal uang. Bisa mengenai pemberian piagam, sertifikat atau sebagainya agar si pegawai itu merasa termotivasi. Lalu dalam permasalahan keterlambatan agar diberikan toleransi bagi para pegawai. Toleransi dapat berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan. Selebihnya keterlambatan mereka dipotong gaji sebesar Rp50.000 saja.
+
+08:19 - Speaker 4 (Ibu Luthfia / Staf)
+Ya, kita juga harus mengadakan pelatihan dan diklat pegawai yang harus rutin dilakukan agar para karyawan memiliki pribadi yang lebih tertata dan terbentuk ke depannya. Pelatihan ini akan sangat berfungsi bagi keberlangsungan hidup perusahaan ke depannya.
+
+08:33 - Speaker 0 (Aleka / Moderator)
+Nah, pemberian kebijakan yang baru juga bisa berupa pemberian untuk jam masuk kerja yang lebih masuk akal lagi karena dari pemantauan saya jam kerja pegawai itu jauh dari jam aktivitas kerja. Misalnya karyawan diharuskan datang pukul 06.00 padahal pekerjaannya ada di jam 08.00. Baik, saya rasa sudah tidak ada lagi ya yang ingin menambahkan solusinya. Terima kasih kepada Ibu Kepala Divisi atas solusi-solusi yang tadi sudah diberikan. Selanjutnya kepada Bapak Wildan apakah solusi dari Ibu Kepala Divisi tadi dapat diterima?
+
+09:08 - Speaker 2 (Pak Wildan / Direktur Utama)
+Terima kasih Aleka. Untuk solusi-solusi tadi sangat bagus dan dapat saya terima. Dan semoga dalam pembuatan kebijakan yang baru nanti semua dapat terwujud di perusahaan kita. Selanjutnya rapat sepertinya sudah bisa diakhiri karena waktu sudah menunjukkan pukul 10.50, untuk itu saya kembalikan kepada Aleka.
+
+09:30 - Speaker 0 (Aleka / Moderator)
+Baik, terima kasih Pak Wildan atas kesempatannya. Izinkanlah saya untuk menyampaikan pokok-pokok pembahasan pada rapat hari ini. Jadi dapat disimpulkan pokok-pokok pembahasan yang didapat adalah yang pertama itu adalah peniadaan kerja di hari libur, lalu yang kedua pemberian toleransi keterlambatan berupa batas pegawai yang melakukan keterlambatan adalah 3 kali dalam sebulan. Selebihnya keterlambatan mereka dipotong gaji sebesar Rp50.000 saja. Lalu yang ketiga ada perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00. Lalu yang keempat ada pengadaan pelatihan dan diklat pegawai secara rutin. Lalu yang kelima ada pemberian reward rutin kepada para pegawai yaitu dapat berupa piagam atau sertifikat dan sebagainya. Sekian adalah sebagian poin-poin yang diterapkan pada kebijakan baru nanti. Selanjutnya tibalah kita pada acara penutup dan doa. Sebelum acara ini diakhiri marilah kita tutup dengan bacaan hamdalah.
+
+10:20 - Speaker 1 (Audience / All)
+Alhamdulillahirabbilalamin.

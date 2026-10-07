@@ -1,0 +1,121 @@
+{
+  "rekap_id": "2b7fc6e7175e",
+  "meeting_id": "0653d0f8-0c12-47c9-8dc8-5855fad68819",
+  "dibuat": "2026-10-05T08:12:23+00:00",
+  "diperbarui": "2026-10-05T08:13:10+00:00",
+  "trace_ids": [
+    "32475295ed0048ee973cbf19322c8501"
+  ],
+  "bagian": {
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Menerapkan kebijakan perusahaan baru mengenai kedisiplinan pegawai.",
+          "kutipan": "Solusi dari saya sendiri mungkin kita akan menerapkan kebijakan perusahaan yang baru mengenai kedisiplinan kedisiplinan pegawai.",
+          "chunk_id": 17,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "06:49",
+          "selesai": "07:10",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A2",
+          "isi": "Mengubah jam kerja menjadi pukul 06.00 menjadi 08.00.",
+          "kutipan": "Lalu yang ketiga ada perubahan masuknya jam kerja dari pukul 06.00 menjadi pukul 08.00.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Mengadakan pelatihan dan diklat pegawai secara rutin.",
+          "kutipan": "Lalu yang keempat ada pengadaan pelatihan dan diklat pegawai secara rutin.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Memberikan reward rutin berupa piagam atau sertifikat kepada pegawai.",
+          "kutipan": "Lalu yang kelima ada pemberian reward rutin kepada para pegawai yaitu dapat berupa piagam atau sertifikat dan sebagainya.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A5",
+          "isi": "Memotong gaji sebesar Rp50.000 untuk keterlambatan.",
+          "kutipan": "Selebihnya keterlambatan mereka dipotong gaji sebesar Rp50.000 saja.",
+          "chunk_id": 25,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "09:50",
+          "selesai": "10:09",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A6",
+          "isi": "Menambah hari cuti dari 1 minggu menjadi 1 bulan per tahun.",
+          "kutipan": "Dan untuk hari cuti yang kurang bisa ditambahkan saja Pak. Misalnya dari 1 minggu setahun menjadi 1 bulan setahun.",
+          "chunk_id": 19,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50",
+          "penanggung_jawab": "Speaker 5",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A7",
+          "isi": "Memberikan reward bagi pegawai yang bekerja di hari libur jika memang urgen.",
+          "kutipan": "Jika memang benar-benar ada pekerjaan yang urgen di hari libur, pegawai bisa diberikan reward.",
+          "chunk_id": 19,
+          "speaker_kutipan": "Speaker 5",
+          "mulai": "07:35",
+          "selesai": "07:50",
+          "penanggung_jawab": "Speaker 5",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A8",
+          "isi": "Menegaskan tidak ada pekerjaan di luar jam kerja bagi kepala divisi.",
+          "kutipan": "pemberian kebijakan ini bisa berupa ketegasan untuk kantor agar tidak memberikan pekerjaan di luar jam kerja terutama untuk kepala divisi masing-masing bagian agar memberi hak libur bagi para pegawainya.",
+          "chunk_id": 18,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "07:14",
+          "selesai": "07:32",
+          "penanggung_jawab": "Speaker 4",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

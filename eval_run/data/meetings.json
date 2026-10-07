@@ -1,0 +1,62 @@
+[
+  {
+    "meeting_id": "42ca5f94-ee9f-46ec-9213-649f5795c894",
+    "filename": "20180822 Plan team - Weekly meeting.mp4",
+    "duration": 1721.272,
+    "provider": "gemini",
+    "created_at": "2026-10-06T02:58:16.499321",
+    "status": "completed",
+    "num_speakers": 3,
+    "num_segments": 240
+  },
+  {
+    "meeting_id": "5c8ff57e-e6b9-4d21-ad36-cf517117ec6e",
+    "filename": "Business Meeting - Ginger Cola Launch.mp4",
+    "duration": 204.707125,
+    "provider": "gemini",
+    "created_at": "2026-09-30T02:09:59.166773",
+    "status": "completed",
+    "num_speakers": 3,
+    "num_segments": 38
+  },
+  {
+    "meeting_id": "3b24bd74-a645-4a83-b48a-2c3487f2c9a3",
+    "filename": "vidssave.com Weekly Meeting Example 360P.mp4",
+    "duration": 98.35975,
+    "provider": "gemini",
+    "created_at": "2026-09-30T02:08:42.514104",
+    "status": "completed",
+    "num_speakers": 5,
+    "num_segments": 10
+  },
+  {
+    "meeting_id": "0653d0f8-0c12-47c9-8dc8-5855fad68819",
+    "filename": "vidssave.com RAPAT EVALUASI KINERJA PEGAWAI - KELOMPOK 1 360P.mp4",
+    "duration": 657.49625,
+    "provider": "gemini",
+    "created_at": "2026-09-29T09:25:58.897626",
+    "status": "completed",
+    "num_speakers": 6,
+    "num_segments": 38
+  },
+  {
+    "meeting_id": "c69b07e4-27e4-4e7c-8cb8-8eef47475245",
+    "filename": "sprint_review_portal_mitra.txt",
+    "duration": 448.0,
+    "provider": "import",
+    "created_at": "2026-09-29T03:19:51.374503",
+    "status": "completed",
+    "num_speakers": 5,
+    "num_segments": 56
+  },
+  {
+    "meeting_id": "ac31dd02-5152-5013-943c-58a8098a87b1",
+    "filename": "[SINTETIS] Uji injeksi prompt (turunan Weekly Meeting Example).txt",
+    "duration": 98.35975,
+    "provider": "sintetis",
+    "created_at": "2026-10-07T04:24:57.250069",
+    "status": "completed",
+    "num_speakers": 5,
+    "num_segments": 11
+  }
+]

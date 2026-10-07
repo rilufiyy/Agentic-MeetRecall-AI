@@ -1,0 +1,193 @@
+{
+  "rekap_id": "79854e1d1aa0",
+  "meeting_id": "3b24bd74-a645-4a83-b48a-2c3487f2c9a3",
+  "dibuat": "2026-10-07T07:22:25+00:00",
+  "diperbarui": "2026-10-07T07:22:28+00:00",
+  "trace_ids": [
+    "9cdee8bff9cc48ce89168086dd803dc3"
+  ],
+  "bagian": {
+    "ringkasan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "R1",
+          "isi": "Ada tren ketidakhadiran yang tinggi pada hari Jumat, terutama di kalangan siswa kronis.",
+          "kutipan": "a lot of students are skipping on Fridays.",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:00",
+          "selesai": "00:15"
+        },
+        {
+          "id": "R2",
+          "isi": "Salah satu solusi yang diusulkan adalah mengadakan sarapan pancake untuk memotivasi siswa hadir.",
+          "kutipan": "It might be good if we did something like a pancake breakfast to encourage them to come.",
+          "chunk_id": 0,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "00:17",
+          "selesai": "00:26"
+        },
+        {
+          "id": "R3",
+          "isi": "Siswa bernama John Smith telah absen tujuh hari di bulan November, dan penyebabnya adalah stres karena membantu keluarga.",
+          "kutipan": "He's really stressed out. He's been dealing with helping his parents take care of his younger siblings during the day.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "01:01",
+          "selesai": "01:13"
+        },
+        {
+          "id": "R4",
+          "isi": "Terdapat rencana untuk mengarahkan John ke konselor bimbingan guna mendapatkan dukungan emosional.",
+          "kutipan": "It might actually be a good idea if he spoke to the guidance counselor a little bit.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "01:01",
+          "selesai": "01:13"
+        },
+        {
+          "id": "R5",
+          "isi": "Siswa lain (Speaker 3) bersedia menemui John di kantor setelah pertemuan awal.",
+          "kutipan": "I can talk to John today if you want to send him to my office after you meet with him.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 3",
+          "mulai": "01:14",
+          "selesai": "01:20"
+        },
+        {
+          "id": "R6",
+          "isi": "Speaker 4 akan mencari sumber daya perawatan anak gratis atau murah untuk membantu keluarga John.",
+          "kutipan": "I'll look for some free or low-cost resources in the community to share with John, and he can share them with his family.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "01:21",
+          "selesai": "01:31"
+        }
+      ],
+      "fokus": []
+    },
+    "keputusan": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "K1",
+          "isi": "Menyelenggarakan pancake breakfast pada minggu depan untuk mendorong kehadiran siswa pada hari Jumat.",
+          "kutipan": "Let's try that next week.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:26",
+          "selesai": "00:29"
+        },
+        {
+          "id": "K2",
+          "isi": "Menyebarkan poster dengan tips pencegahan flu karena musim flu mendekat.",
+          "kutipan": "We should put up posters with tips for not getting sick since it's almost flu season, like you know, wash your hands after the bathroom, stuff like that.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:30",
+          "selesai": "00:44"
+        },
+        {
+          "id": "K3",
+          "isi": "Mengajak John Smith berbicara dengan konselor bimbingan.",
+          "kutipan": "Um, it might actually be a good idea if he spoke to the guidance counselor a little bit.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "01:01",
+          "selesai": "01:13"
+        },
+        {
+          "id": "K4",
+          "isi": "Mengirim John Smith ke kantor konselor setelah pertemuan dengan pembicara.",
+          "kutipan": "I can talk to John today if you want to send him to my office after you meet with him.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 3",
+          "mulai": "01:14",
+          "selesai": "01:20"
+        },
+        {
+          "id": "K5",
+          "isi": "Mencari sumber daya perawatan anak gratis atau berbiaya rendah untuk keluarga John.",
+          "kutipan": "I'll look for some free or low-cost resources in the community to share with John, and he can share them with his family.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "01:21",
+          "selesai": "01:31"
+        }
+      ],
+      "fokus": []
+    },
+    "action_items": {
+      "status": "ok",
+      "items": [
+        {
+          "id": "A1",
+          "isi": "Mengadakan pancake breakfast pada minggu depan untuk mendorong kehadiran siswa pada hari Jumat.",
+          "kutipan": "Let's try that next week.",
+          "chunk_id": 1,
+          "speaker_kutipan": "Speaker 0",
+          "mulai": "00:26",
+          "selesai": "00:29",
+          "penanggung_jawab": "Speaker 0",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "next week",
+          "status_tenggat": "relatif"
+        },
+        {
+          "id": "A2",
+          "isi": "Menyebarkan poster dengan tips tidak terserang flu di sekolah.",
+          "kutipan": "We should put up posters with tips for not getting sick since it's almost flu season, like you know, wash your hands after the bathroom, stuff like that.",
+          "chunk_id": 2,
+          "speaker_kutipan": "Speaker 2",
+          "mulai": "00:30",
+          "selesai": "00:44",
+          "penanggung_jawab": "Speaker 2",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A3",
+          "isi": "Mendorong John Smith untuk berbicara dengan konselor bimbingan.",
+          "kutipan": "Um, it might actually be a good idea if he spoke to the guidance counselor a little bit.",
+          "chunk_id": 3,
+          "speaker_kutipan": "Speaker 1",
+          "mulai": "01:01",
+          "selesai": "01:13",
+          "penanggung_jawab": "Speaker 1",
+          "status_penanggung_jawab": "ambigu",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A4",
+          "isi": "Speaker 3 akan berbicara dengan John Smith di kantor setelah pertemuan.",
+          "kutipan": "I can talk to John today if you want to send him to my office after you meet with him.",
+          "chunk_id": 4,
+          "speaker_kutipan": "Speaker 3",
+          "mulai": "01:14",
+          "selesai": "01:20",
+          "penanggung_jawab": "Speaker 3",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        },
+        {
+          "id": "A5",
+          "isi": "Speaker 4 akan mencari sumber daya perawatan anak gratis atau berbiaya rendah untuk dibagikan kepada keluarga John.",
+          "kutipan": "I'll look for some free or low-cost resources in the community to share with John, and he can share them with his family.",
+          "chunk_id": 5,
+          "speaker_kutipan": "Speaker 4",
+          "mulai": "01:21",
+          "selesai": "01:31",
+          "penanggung_jawab": "Speaker 4",
+          "status_penanggung_jawab": "jelas",
+          "tenggat": "",
+          "status_tenggat": "tidak_disebut"
+        }
+      ],
+      "fokus": []
+    }
+  }
+}

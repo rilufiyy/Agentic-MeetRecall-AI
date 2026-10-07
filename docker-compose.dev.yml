@@ -1,0 +1,21 @@
+# Development override: mounts the source code and reloads on save, so code
+# changes need no image rebuild. Rebuild only after changing requirements.txt.
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+services:
+  backend:
+    volumes:
+      - ./backend:/app
+    environment:
+      WATCHFILES_FORCE_POLLING: "true"   # file events do not cross a Windows bind mount
+    # Runtime folders are excluded so saving a result does not restart a running job.
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload",
+              "--reload-exclude", "data/*", "--reload-exclude", "uploads/*",
+              "--reload-exclude", "results/*"]
+
+  frontend:
+    volumes:
+      - ./frontend:/app
+    command: ["streamlit", "run", "app.py",
+              "--server.port=8501", "--server.address=0.0.0.0",
+              "--server.headless=true", "--server.runOnSave=true",
+              "--server.fileWatcherType=poll"]
