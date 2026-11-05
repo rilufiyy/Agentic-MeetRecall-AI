@@ -26,7 +26,8 @@ from typing import Callable, Dict, List, Optional
 from agent import approvals, config
 from agent.llm_client import ChatClient
 from agent.loop import AgentResult
-from agent.tools import ToolContext, execute_tool
+from agent.mcp_client import dispatch
+from agent.tools import ToolContext
 from agent.tracing import Tracer
 
 ACTIONS = ("laporan", "task")
@@ -52,7 +53,7 @@ def run_workflow(meeting_id: str, aksi: str, formats: Optional[List[str]] = None
     ctx = (ctx_factory or (lambda tr, lm: ToolContext(tracer=tr, llm=lm)))(tracer, llm)
     ctx.meeting_id = meeting_id
     ctx.user_message = _INTENT["task"] if aksi == "task" else (_INTENT["kirim"] if kirim else "buatkan laporan")
-    tracer.log("run_start", aksi=aksi, formats=formats, kirim=kirim, model=llm.model, tools=[])
+    tracer.log("run_start", aksi=aksi, formats=formats, kirim=kirim, model=llm.model, tools=[], transport=config.TOOL_TRANSPORT)
     called: List[str] = []
 
     def finish(status: str, answer: str, approval_id: Optional[str] = None) -> AgentResult:
@@ -61,11 +62,11 @@ def run_workflow(meeting_id: str, aksi: str, formats: Optional[List[str]] = None
         active = ctx.rekap_ids.get(meeting_id)
         tracer.log("run_end", status=status, jumlah_iterasi=0, tools_dipanggil=called, rekap_id=active,
                    approval_id=approval_id, total_latency_ms=latency, jawaban=answer[:1000], **totals)
-        return AgentResult(status, answer, tracer.trace_id, 0, called, active, approval_id, totals, latency, list(tracer.events))
+        return AgentResult(status, answer, tracer.trace_id, 0, called, active, approval_id, totals, latency, list(tracer.events), list(ctx.sources), dict(ctx.verifikasi))
 
     def step(tool: str, args: Dict) -> Dict:
         called.append(tool)
-        return execute_tool(tool, json.dumps(args), ctx, iterasi=len(called))
+        return dispatch(tool, json.dumps(args), ctx, iterasi=len(called))
 
     def fail(tool: str, out: Dict) -> AgentResult:
         return finish("workflow_error", f"Langkah {tool} gagal ({out.get('status')}): {out.get('pesan', '')}")

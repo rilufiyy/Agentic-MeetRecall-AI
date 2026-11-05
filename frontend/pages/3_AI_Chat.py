@@ -12,7 +12,7 @@ import pandas as pd
 
 st.set_page_config(page_title="AI Chat - MeetRecall AI", layout="wide")
 
-from utils.styles import ASSISTANT_AVATAR, USER_AVATAR, inject, user_html
+from utils.styles import ASSISTANT_AVATAR, TYPING_INDICATOR, USER_AVATAR, inject, user_html
 from utils.api_client import api_client
 from utils.timefmt import fmt_range
 
@@ -193,9 +193,11 @@ if prompt:
     _history = _history[-3:] or None
 
     with st.chat_message("assistant", avatar=ASSISTANT_AVATAR):
-        with st.spinner("Mencari konteks dan membuat jawaban..."):
-            resp = api_client.rag_chat(selected_id, prompt, top_k=top_k, history=_history,
-                                       retrieval=retrieval_settings)
+        _typing = st.empty()
+        _typing.markdown(TYPING_INDICATOR, unsafe_allow_html=True)
+        resp = api_client.rag_chat(selected_id, prompt, top_k=top_k, history=_history,
+                                   retrieval=retrieval_settings)
+        _typing.empty()
         if "error" in resp:
             md = {"role": "assistant", "transcription_summary": f"Error: {resp.get('error', '')}", "key_actions": [], "keywords": [], "sources": []}
         else:

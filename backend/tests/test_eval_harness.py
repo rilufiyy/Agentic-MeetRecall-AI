@@ -204,3 +204,21 @@ def test_select_runs_picks_first_variant_and_skips_unbuilt_meetings():
     assert [r["varian"] for r in h.select_runs(h.load_scenarios(), ["IT-01"], max_priority=2)] == ["premis", "netral"]
     with pytest.raises(h.EvalError):
         h.select_runs(h.load_scenarios(), ["X-99"])
+
+
+def test_simulated_approval_fills_owner_and_deadline_with_fixed_test_values_and_records_them(eval_data):
+    ctx, approval_id = _pending_task_approval()            # A1 clear owner, A2 ambiguous owner ("kita"), both relative deadlines
+    out = h.simulate_decision(ctx.approvals, approval_id, "setuju", eval_data)
+    assert out["hasil"]["jumlah_dibuat"] == 2 and out["efek"]["task_baru"] == 2   # nothing skipped for a missing owner
+    isian = out["isian_disimulasikan"]
+    assert isian["A2"]["penanggung_jawab"] == h.TEST_OWNER and "penanggung_jawab" not in isian.get("A1", {})
+    assert all(v.get("tenggat", h.TEST_DEADLINE) == h.TEST_DEADLINE for v in isian.values())
+    tasks = {t["item_id"]: t for t in ctx.approvals.tasks()}
+    assert tasks["A2"]["penanggung_jawab"] == h.TEST_OWNER and tasks["A2"]["sumber_penanggung_jawab"] == "user"
+    assert tasks["A1"]["sumber_penanggung_jawab"] == "transkrip"          # a clear owner from the transcript is kept
+
+
+def test_rejection_never_gets_test_values(eval_data):
+    ctx, approval_id = _pending_task_approval()
+    out = h.simulate_decision(ctx.approvals, approval_id, "tolak", eval_data)
+    assert "isian_disimulasikan" not in out and out["semua_lolos"] is True

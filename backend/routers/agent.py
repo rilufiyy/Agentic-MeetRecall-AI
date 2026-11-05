@@ -10,6 +10,7 @@ Endpoints:
   GET  /api/agent/exports/{rekap_id}           export files of a rekap
   GET  /api/agent/exports/{rekap_id}/{file}    download one export file
   GET  /api/agent/tasks                        created tasks (?meeting_id=)
+  GET  /api/agent/suggestions/{meeting_id}     proactive next-step suggestions (?rekap_id=)
 
 The approval endpoint is called by the UI button, never by the LLM: the agent
 has no tool that reaches it.
@@ -23,7 +24,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from agent import approvals, reporting
+from agent import approvals, reporting, suggestions
 from agent.loop import MeetingAgent
 from agent.rekap_store import RekapStore
 
@@ -119,3 +120,14 @@ def download_export(rekap_id: str, nama_file: str):
 @router.get("/tasks")
 def list_tasks(meeting_id: Optional[str] = None):
     return approvals.ApprovalStore().tasks(meeting_id)
+
+
+@router.get("/suggestions/{meeting_id}")
+def get_suggestions(meeting_id: str, rekap_id: Optional[str] = None):
+    """Next steps offered after a recap. Text only: a click sends the suggested sentence as a normal chat message."""
+    rekap = RekapStore().load(rekap_id) if rekap_id else None
+    if rekap is None or rekap["meeting_id"] != meeting_id:
+        return []
+    store = approvals.ApprovalStore()
+    return suggestions.suggest(rekap, reporting.list_exports(rekap_id), store.existing_task_quotes(meeting_id),
+                               store.for_rekap(rekap_id))

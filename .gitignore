@@ -11,3 +11,13 @@ node_modules/
 *.mp3
 *.wav
 *.mp4
+
+# local model cache (bind mount)
+hf-cache/
+
+# local run output & data
+eval_run/
+eval_run_v2/
+backend_dev/
+backend/data/agent/
+backend/data/traces/

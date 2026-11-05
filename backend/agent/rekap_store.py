@@ -19,6 +19,17 @@ from agent.guardrails import normalize
 ID_PREFIX = {"action_items": "A", "keputusan": "K", "isu_terbuka": "I", "ringkasan": "R"}
 
 
+def _start_seconds(mulai: str) -> int:
+    """'28:21' or '1:02:03' -> seconds; unreadable values sort first."""
+    try:
+        total = 0
+        for part in (mulai or "0").split(":"):
+            total = total * 60 + int(part)
+        return total
+    except ValueError:
+        return 0
+
+
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -69,7 +80,9 @@ class RekapStore:
             section["fokus"].append(fokus)
         seen = {normalize(i["kutipan"]) for i in section["items"]}
         added = []
-        for item in items:
+        # Ids follow the order in which things were said, so A1 is the earliest commitment. Ids already stored never
+        # change (tasks refer to them); a later batch continues the numbering.
+        for item in sorted(items, key=lambda i: _start_seconds(i.get("mulai", ""))):
             key = normalize(item["kutipan"])
             if key in seen:
                 continue

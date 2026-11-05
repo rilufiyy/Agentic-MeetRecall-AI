@@ -100,3 +100,7 @@ def estimate_cost(model: str, input_tokens, output_tokens):
     if price is None or input_tokens is None or output_tokens is None:
         return None
     return round((input_tokens * price[0] + output_tokens * price[1]) / 1_000_000, 8)
+
+# How the agent loop and the workflow reach their tools: "local" calls agent.tools directly; "mcp" goes
+# through the Model Context Protocol (tool discovery and every call as MCP requests, in-process transport).
+TOOL_TRANSPORT: str = _env("AGENT_TOOL_TRANSPORT", "local")

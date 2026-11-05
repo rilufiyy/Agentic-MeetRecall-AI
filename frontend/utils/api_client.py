@@ -271,6 +271,15 @@ class APIClient:
         except requests.RequestException:
             return None
 
+    def suggestions(self, meeting_id: str, rekap_id: str) -> list:
+        try:
+            resp = self._session.get(f"{self.base}/api/agent/suggestions/{meeting_id}",
+                                     params={"rekap_id": rekap_id}, timeout=15)
+            resp.raise_for_status()
+            return resp.json()
+        except requests.RequestException:
+            return []
+
     def list_tasks(self, meeting_id: str) -> list:
         try:
             resp = self._session.get(f"{self.base}/api/agent/tasks",

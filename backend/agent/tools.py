@@ -60,6 +60,8 @@ class ToolContext:
     meeting_id: Optional[str] = None       # active meeting; rekaps of other meetings are refused
     user_message: Optional[str] = None     # this turn's user message, for the write-intent check
     injection_seen: bool = False           # a chunk read in this run looked like an instruction
+    verifikasi: Dict = field(default_factory=dict)      # quote check of the final answer, shown with the references
+    sources: List[Dict] = field(default_factory=list)   # transcript passages and verified items read in this run, shown as references
     # Injected for tests; default to the W6 services (imported lazily, they load torch/faiss).
     storage: Any = None
     retrieve: Optional[Callable] = None
@@ -70,6 +72,19 @@ class ToolContext:
             self.storage = storage_service
         if self.retrieve is None:
             self.retrieve = _w6_retrieve
+
+
+MAX_SOURCES = 30
+
+
+def add_sources(ctx: ToolContext, found: List[Dict]) -> None:
+    """Record references from tool results. Built by code from what the tools returned, never written by the LLM."""
+    seen = {(s['jenis'], s.get('chunk_id'), s.get('id'), s.get('butir')) for s in ctx.sources}
+    for s in found:
+        key = (s['jenis'], s.get('chunk_id'), s.get('id'), s.get('butir'))
+        if key not in seen and len(ctx.sources) < MAX_SOURCES:
+            seen.add(key)
+            ctx.sources.append(s)
 
 
 def _w6_retrieve(meeting_id: str, query: str, top_k: int, min_score: float):
@@ -144,6 +159,9 @@ def cari_transkrip(args: CariTranskripArgs, ctx: ToolContext) -> Dict:
                 "alasan": outcome.abstain_reason or "no_match",
                 "pesan": "Tidak ada potongan transkrip yang relevan. Sampaikan 'tidak ditemukan'."}
     flagged = _flag_injection(ctx, outcome.chunks)
+    add_sources(ctx, [{"jenis": "transkrip", "chunk_id": c["chunk_id"], "speaker": c.get("speaker", ""),
+                       "mulai": fmt_ts(c["start_time"]), "selesai": fmt_ts(c["end_time"]),
+                       "teks": c["text"][:600], "relevansi": relevansi} for c in outcome.chunks])
     result = {
         "status": "ok",
         "relevansi": relevansi,
@@ -419,6 +437,9 @@ def _ekstrak_satu(args: EkstrakPoinArgs, ctx: ToolContext) -> Dict:
         raise ToolFailure("error", f"Ekstraksi gagal: {failed[0]}")
     added = ctx.rekaps.add_items(rekap, args.jenis, items, args.fokus)
     section = rekap["bagian"][args.jenis]
+    add_sources(ctx, [{"jenis": "butir", "butir": args.jenis, "id": i["id"], "isi": i["isi"],
+                       "speaker": i.get("speaker_kutipan") or "", "mulai": i.get("mulai", ""),
+                       "kutipan": i["kutipan"]} for i in section["items"]])
 
     result: Dict[str, Any] = {
         "status": "ok" if section["items"] else "not_found",

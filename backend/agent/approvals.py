@@ -180,6 +180,11 @@ class ApprovalStore:
         with self._conn() as con:
             return [_approval_row(r) for r in con.execute(sql + " ORDER BY dibuat", params)]
 
+    def for_rekap(self, rekap_id: str) -> List[Dict]:
+        with self._conn() as con:
+            return [_approval_row(r) for r in con.execute(
+                "SELECT * FROM approvals WHERE rekap_id = ? ORDER BY dibuat", (rekap_id,))]
+
     def _claim(self, approval_id: str) -> None:
         """Move menunggu -> diproses atomically, so a request runs at most once."""
         with self._conn() as con:

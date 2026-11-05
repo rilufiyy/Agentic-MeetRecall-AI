@@ -32,3 +32,5 @@ pytest>=8.0.0
 fpdf2==2.8.9
 # W78 agent: DOCX export (python-docx, https://python-docx.readthedocs.io/)
 python-docx==1.2.0
+# W78 MCP server (Model Context Protocol Python SDK, https://github.com/modelcontextprotocol/python-sdk)
+mcp>=1.9,<2

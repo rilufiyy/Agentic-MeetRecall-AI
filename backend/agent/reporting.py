@@ -108,7 +108,7 @@ def section_status(rekap: Dict, jenis: str) -> str:
     return "ok" if section.get("items") else "tidak_ditemukan"
 
 
-# Tritronik palette, read from https://tritronik.com/ (theme-color and computed colours, 2026-10-06).
+# Tritronik palette, read from https://tritronik.com/ (theme-color and computed colours).
 BLUE = (78, 114, 194)        # #4E72C2 brand blue: title, links, timestamps
 NAVY = (52, 69, 116)         # #344574 dominant dark blue: section bands, headings
 MID = (95, 138, 207)         # #5F8ACF quote rule
@@ -321,6 +321,9 @@ def _render_pdf(doc: Dict, path: Path) -> Dict:
     pdf.add_page()
 
     def t(text: str) -> str:
+        # Models sometimes write a non-breaking hyphen (U+2011); the bold and italic report fonts have no glyph for it,
+        # so "MR-230" and "11-13" lost the hyphen in the PDF. It is replaced by a plain hyphen at render time only.
+        text = text.replace("‐", "-").replace("‑", "-")
         return text.encode("latin-1", "replace").decode("latin-1") if latin1 else text
 
     def write(text, size=10, style="", color=INK, h=None, width=0, align="L", gap=0.0):
@@ -360,8 +363,15 @@ def _render_pdf(doc: Dict, path: Path) -> Dict:
         write(paragraph, 10.5, "", INK, h=5.6, gap=2)
     pdf.ln(3)
 
-    def band(title: str) -> None:
-        if pdf.will_page_break(30):
+    def item_height(it: Dict) -> float:
+        title = f"{it['no']}. {it['judul']}"
+        quote = f"\"{it['kutipan']}\""
+        return (lines_needed(title, 10, "B") * 5 + len(it["info"]) * 4.6 +
+                lines_needed(quote, 9, "I", usable - 6) * 4.6 + 10)
+
+    def band(title: str, need: float = 30) -> None:
+        # `need` is the room the band and what must follow it require; a band is never left alone at a page bottom.
+        if pdf.will_page_break(need):
             pdf.add_page()
         pdf.set_fill_color(*NAVY)
         pdf.set_text_color(*WHITE)
@@ -372,9 +382,7 @@ def _render_pdf(doc: Dict, path: Path) -> Dict:
     def item(it: Dict) -> None:
         title = f"{it['no']}. {it['judul']}"
         quote = f"\"{it['kutipan']}\""
-        height = (lines_needed(title, 10, "B") * 5 + len(it["info"]) * 4.6 +
-                  lines_needed(quote, 9, "I", usable - 6) * 4.6 + 10)
-        if pdf.will_page_break(height):
+        if pdf.will_page_break(item_height(it)):
             pdf.add_page()
         write(title, 10, "B", INK, h=5, gap=0.8)
         for info in it["info"]:
@@ -398,7 +406,8 @@ def _render_pdf(doc: Dict, path: Path) -> Dict:
         pdf.ln(4)
 
     for section in doc["sections"]:
-        band(section["judul"])
+        # Band (about 11 mm) plus the first item, so the heading and its first item always share a page.
+        band(section["judul"], need=30 if section["kosong"] else 11 + item_height(section["items"][0]))
         if section["kosong"]:
             write(section["kosong"], 9.5, "", GRAY, h=5, gap=5)
             continue

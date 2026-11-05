@@ -142,7 +142,7 @@ def code_fingerprint(root: Optional[Path] = None) -> Dict:
 def config_snapshot(config) -> Dict:
     """Non-secret settings that change agent behavior. Never reads the environment file or any key."""
     keys = ("MAX_ITERATIONS", "MAX_CONSECUTIVE_TOOL_ERRORS", "MAX_LLM_RETRIES", "RETRIEVAL_MODE", "RETRIEVAL_FUSION",
-            "RETRIEVAL_MIN_SCORE", "TOOL_CHUNK_MAX_CHARS", "EXTRACT_MAX_CHUNKS", "EXTRACT_MAX_CALLS", "MAX_TASK_ITEMS", "EMAIL_MODE")
+            "RETRIEVAL_MIN_SCORE", "TOOL_CHUNK_MAX_CHARS", "EXTRACT_MAX_CHUNKS", "EXTRACT_MAX_CALLS", "MAX_TASK_ITEMS", "EMAIL_MODE", "TOOL_TRANSPORT")
     values = {k: getattr(config, k, None) for k in keys}
     values["sha"] = hashlib.sha256(json.dumps(values, sort_keys=True, default=str).encode()).hexdigest()[:16]
     return values
@@ -170,6 +170,30 @@ def select_runs(scenarios: List[Dict], ids: List[str], max_priority: int = 1) ->
     return runs
 
 
+# Fixed test values typed in at approval time. The owner and deadline of a task are filled by the user when approving
+# (prompt rules 7 and 12), so the simulated "setuju" fills them too; otherwise items without an owner are skipped
+# and the approval creates nothing. The values are recorded as isian_disimulasikan so they never pass for agent output.
+TEST_OWNER = "Penanggung Jawab Uji"
+TEST_DEADLINE = "2099-12-31"
+
+
+def test_isian(store, approval_id: str) -> Dict[str, Dict[str, str]]:
+    """Fixed owner and deadline for every item of a buat_task preview that still needs one."""
+    approval = store.get(approval_id)
+    if not approval or approval.get("tool") != "buat_task":
+        return {}
+    isian: Dict[str, Dict[str, str]] = {}
+    for item in (approval.get("preview") or {}).get("items", []):
+        fill: Dict[str, str] = {}
+        if item.get("perlu_isi_penanggung_jawab"):
+            fill["penanggung_jawab"] = TEST_OWNER
+        if item.get("perlu_cek_tenggat"):
+            fill["tenggat"] = TEST_DEADLINE
+        if fill:
+            isian[item["id"]] = fill
+    return isian
+
+
 def simulate_decision(store, approval_id: str, keputusan: str, data_dir: Path = Path("data")) -> Dict:
     """
     Phase 2 of a write action, simulated by the harness (no human click) and only ever on the isolated eval data.
@@ -182,7 +206,8 @@ def simulate_decision(store, approval_id: str, keputusan: str, data_dir: Path = 
     import verify_approval_rejected as vr
     from agent import approvals
     before = vr.snapshot(data_dir)
-    result = approvals.decide(store, approval_id, setuju=keputusan == "setuju")
+    isian = test_isian(store, approval_id) if keputusan == "setuju" else {}
+    result = approvals.decide(store, approval_id, setuju=keputusan == "setuju", isian=isian or None)
     after = vr.snapshot(data_dir)
     out: Dict = {"keputusan": keputusan, "simulasi": True, "hasil": {k: result.get(k) for k in ("status", "jumlah_dibuat", "mode", "path", "pesan")}}
     if keputusan == "tolak":
@@ -190,6 +215,7 @@ def simulate_decision(store, approval_id: str, keputusan: str, data_dir: Path = 
         out["verifikasi_penolakan"] = [{"nama": n, "lolos": ok, "detail": d} for n, ok, d in checks]
         out["semua_lolos"] = all(ok for _, ok, _ in checks)
     else:
+        out["isian_disimulasikan"] = isian
         out["efek"] = {"task_baru": after["tasks"] - before["tasks"],
                        "eml_baru": sorted(set(after["outbox"]) - set(before["outbox"]))}
     return out

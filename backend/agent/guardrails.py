@@ -6,7 +6,7 @@ None of these call an LLM.
 from __future__ import annotations
 
 import re
-from typing import Dict, Iterable, List, Optional, Sequence
+from typing import Callable, Dict, Iterable, List, Optional, Sequence, Tuple
 
 # Normalisation
 
@@ -203,12 +203,118 @@ def injection_flags(text: str) -> List[str]:
 _QUOTED = re.compile(r"[\"“]([^\"“”\n|]{12,400})[\"”]")
 
 
-def unverified_quotes(answer: str, transcript_text: str) -> List[str]:
+def is_name_not_quote(passage: str, names: Sequence[str]) -> bool:
+    """True when a quoted passage is a name the system knows (the meeting title, or a file named after it), not
+    something said in the meeting. Such names are not in the transcript and must not be checked against it."""
+    p = normalize(passage)
+    return any(n and (p == n or p.startswith(n + " ")) for n in (normalize(x) for x in names))
+
+
+def quoted_passages(answer: str, names: Sequence[str] = ()) -> List[str]:
+    """Passages the answer puts in quotation marks (long enough to be a quote, not a short term, not a known name)."""
+    return [m.group(1) for m in _QUOTED.finditer(answer or "")
+            if len(normalize(m.group(1)).split()) >= MIN_QUOTE_WORDS and not is_name_not_quote(m.group(1), names)]
+
+
+# Quote location and attribution: where a quote really is in the transcript, and whether the "(Speaker, mm:ss)" the
+# model wrote after it matches. Pure functions over the transcript segments; the model's attribution is never trusted.
+
+MAX_QUOTE_SPAN = 6        # a quote may run over at most this many consecutive segments
+TIME_TOLERANCE_S = 5.0    # claimed time may be this far outside the real segment and still count as right
+_ATTR = re.compile(r"[ \t]*\(([^()\n]{2,80})\)")
+_TS = re.compile(r"(\d{1,2}):(\d{2})(?::(\d{2}))?")
+
+
+def locate_quote(quote: str, segments: Sequence) -> List[Dict]:
+    """Every place the quote occurs: the shortest run of consecutive segments containing it, starting in the first
+    segment. Each hit: {speakers (in order), start, end}. Same matching rules as quote_in_text."""
+    q = _squash_repeats(normalize(quote))
+    if len(q.split()) < MIN_QUOTE_WORDS:
+        return []
+    norms = [_squash_repeats(normalize(strip_speakers(s.text))) for s in segments]
+    hits = []
+    for i in range(len(segments)):
+        for j in range(i, min(i + MAX_QUOTE_SPAN, len(segments))):
+            run = _squash_repeats(" ".join(norms[i:j + 1]))
+            if f" {q} " not in f" {run} ":
+                continue
+            tail = _squash_repeats(" ".join(norms[i + 1:j + 1]))
+            if j > i and f" {q} " in f" {tail} ":
+                break   # the quote starts in a later segment; that start is found on its own
+            speakers = list(dict.fromkeys(s.speaker for s in segments[i:j + 1]))
+            hits.append({"speakers": speakers, "start": segments[i].start_time, "end": segments[j].end_time})
+            break
+    return hits
+
+
+def _seconds(m: Tuple[str, str, str]) -> int:
+    a, b, c = m
+    return int(a) * 3600 + int(b) * 60 + int(c) if c else int(a) * 60 + int(b)
+
+
+def _attribution_ok(claimed: str, hit: Dict, labels: Sequence[str]) -> bool:
+    """A claim is checked only for what it states: a speaker label of this meeting, and/or timestamps. A name that
+    is not a label (the transcript only has labels) or no speaker at all is not judged."""
+    named = {l for l in labels if re.search(rf"(?<!\w){re.escape(l)}(?!\w)", claimed, re.IGNORECASE)}
+    speaker_ok = not named or bool(named & set(hit["speakers"]))
+    times = [_seconds(m) for m in _TS.findall(claimed)]
+    time_ok = not times or (min(times) <= hit["end"] + TIME_TOLERANCE_S and max(times) >= hit["start"] - TIME_TOLERANCE_S)
+    return speaker_ok and time_ok
+
+
+def check_attribution(answer: str, segments: Sequence, fmt_ts: Callable[[float], str],
+                      names: Sequence[str] = ()) -> Tuple[str, List[Dict]]:
+    """Locate each quote of the answer and fix a wrong "(Speaker, time)" written right after it.
+    Returns (answer with wrong attributions replaced, one record per quote). A record: kutipan, ditemukan, and when
+    found speaker, mulai, selesai, ditulis (what the model wrote, or None), dikoreksi (it was wrong), dirapikan (it was
+    right but a wider range than the quote, narrowed), ambigu (occurs more than once)."""
+    labels = sorted({s.speaker for s in segments})
+    edits, records = [], []
+    for m in _QUOTED.finditer(answer or ""):
+        q = m.group(1)
+        if len(normalize(q).split()) < MIN_QUOTE_WORDS or is_name_not_quote(q, names):
+            continue
+        hits = locate_quote(q, segments)
+        if not hits:
+            records.append({"kutipan": q[:200], "ditemukan": False})
+            continue
+        am = _ATTR.match(answer, m.end())
+        claimed = am.group(1) if am else None
+        chosen, fixed, tidied = hits[0], False, False
+        if claimed is not None:
+            ok = [h for h in hits if _attribution_ok(claimed, h, labels)]
+            if ok:
+                chosen = ok[0]
+                times = [_seconds(t) for t in _TS.findall(claimed)]
+                if len(times) >= 2 and (abs(min(times) - chosen["start"]) > TIME_TOLERANCE_S
+                                        or abs(max(times) - chosen["end"]) > TIME_TOLERANCE_S):
+                    # right speaker and the quote lies inside the range, but the range is wider than the quote
+                    # (typically the whole chunk): narrow it so the answer and the reference say the same thing.
+                    tidied = True
+                    edits.append((am.start(1) - 1, am.end(), f"({' dan '.join(chosen['speakers'])}, "
+                                                              f"{fmt_ts(chosen['start'])}-{fmt_ts(chosen['end'])})"))
+            else:
+                times = [_seconds(t) for t in _TS.findall(claimed)]
+                if times:   # several occurrences: correct to the one nearest the time the model gave
+                    chosen = min(hits, key=lambda h: abs(h["start"] - times[0]))
+                fixed = True
+                edits.append((am.start(1) - 1, am.end(), f"({' dan '.join(chosen['speakers'])}, "
+                                                          f"{fmt_ts(chosen['start'])}-{fmt_ts(chosen['end'])})"))
+        records.append({"kutipan": q[:200], "ditemukan": True, "speaker": " dan ".join(chosen["speakers"]),
+                        "mulai": fmt_ts(chosen["start"]), "selesai": fmt_ts(chosen["end"]), "ditulis": claimed,
+                        "dikoreksi": fixed, "dirapikan": tidied, "ambigu": len(hits) > 1})
+    for start, end, text in reversed(edits):
+        answer = answer[:start] + text + answer[end:]
+    return answer, records
+
+
+def unverified_quotes(answer: str, transcript_text: str, names: Sequence[str] = ()) -> List[str]:
     """Quoted passages in the final answer that are not in the transcript."""
     out = []
     for m in _QUOTED.finditer(answer or ""):
         q = m.group(1)
-        if len(normalize(q).split()) >= MIN_QUOTE_WORDS and not quote_in_text(q, transcript_text):
+        if (len(normalize(q).split()) >= MIN_QUOTE_WORDS and not is_name_not_quote(q, names)
+                and not quote_in_text(q, transcript_text)):
             out.append(q[:120])
     return out
 

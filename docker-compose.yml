@@ -13,9 +13,12 @@ services:
       - ./backend:/app             # W78: code from the host, so edits need no rebuild
       - ./backend/data:/app/data   # W78: bind mount, meetings, rekap and traces stay visible on the host
       - meetrecall-uploads:/app/uploads
-      - meetrecall-hf-cache:/root/.cache/huggingface
+      - ./hf-cache:/root/.cache/huggingface   # bind mount on drive D (models are ~3-4 GB), not the Docker VHDX on C
     env_file:
       - ./backend/.env
+    environment:
+      # local: tools called directly (default, as evaluated). mcp: discovery and calls go through MCP.
+      AGENT_TOOL_TRANSPORT: ${AGENT_TOOL_TRANSPORT:-local}
     # CPU only: TORCH_INDEX_URL above installs CPU PyTorch wheels.
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://127.0.0.1:8000/health || exit 1"]
@@ -48,7 +51,6 @@ services:
 
 volumes:
   meetrecall-uploads:
-  meetrecall-hf-cache:
 
 networks:
   meetrecall-net:

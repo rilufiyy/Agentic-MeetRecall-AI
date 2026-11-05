@@ -6,3 +6,10 @@ FROM meetrecall-backend:latest
 RUN apt-get update && apt-get install -y --no-install-recommends fonts-liberation \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir fpdf2==2.8.9 python-docx==1.2.0
+# The torchcodec in the W6 image is the CUDA build (needs libnvrtc.so.13), so
+# `import torchcodec` raises OSError on this CPU-only image. transformers' ASR
+# pipeline imports it on every call, which failed local Whisper + pyannote jobs.
+RUN pip install --no-cache-dir --force-reinstall --no-deps torchcodec \
+        --index-url https://download.pytorch.org/whl/cpu
+# MCP server and client for the agent tools (Model Context Protocol Python SDK).
+RUN pip install --no-cache-dir 'mcp>=1.9,<2'

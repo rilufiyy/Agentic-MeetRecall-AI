@@ -265,6 +265,47 @@ _CSS = """
     color: #ffffff !important;
 }
 
+/* Waiting-for-answer bubble: three pulsing dots + rotating glow border */
+@property --mr-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes mr-spin { to { --mr-angle: 360deg; } }
+@keyframes mr-dot {
+    0%, 80%, 100% { opacity: 0.3; transform: scale(0.85); }
+    40% { opacity: 1; transform: scale(1); }
+}
+.mr-typing {
+    position: relative;
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    padding: 16px 22px;
+    border-radius: 6px 22px 22px 22px;
+    background: #1e293b;
+    isolation: isolate;
+}
+.mr-typing::before, .mr-typing::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(from var(--mr-angle), transparent 0 55%, #6366f1 72%, #f43f5e 88%, #fb923c 96%, transparent 100%);
+    animation: mr-spin 2.4s linear infinite;
+    z-index: -1;
+}
+.mr-typing::before {
+    padding: 2px;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.mr-typing::after { filter: blur(10px); opacity: 0.55; z-index: -2; }
+.mr-typing i {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: #e2e8f0;
+    animation: mr-dot 1.3s ease-in-out infinite;
+}
+.mr-typing i:nth-child(2) { animation-delay: 0.18s; }
+.mr-typing i:nth-child(3) { animation-delay: 0.36s; }
+
 /* Divider */
 hr { border-color: #334155 !important; margin: 24px 0 !important; }
 </style>
@@ -278,6 +319,9 @@ USER_AVATAR = ":material/person:"
 # Streamlit marks custom avatars as "custom" for both roles and sets no aria-label, so user messages carry
 # this invisible marker and the CSS finds them with :has().
 USER_MARK = '<span class="mr-user"></span>'
+
+
+TYPING_INDICATOR = '<div class="mr-typing"><i></i><i></i><i></i></div>'
 
 
 def user_html(text: str) -> str:

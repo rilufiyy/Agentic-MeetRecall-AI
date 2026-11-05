@@ -17,7 +17,7 @@ st.set_page_config(page_title="Agent - MeetRecall AI", layout="wide")
 
 from utils.agent_view import jobs_table, render_steps, status_text  # noqa: E402
 from utils.api_client import api_client  # noqa: E402
-from utils.styles import ASSISTANT_AVATAR, USER_AVATAR, inject, user_html  # noqa: E402
+from utils.styles import ASSISTANT_AVATAR, TYPING_INDICATOR, USER_AVATAR, inject, user_html  # noqa: E402
 
 inject()
 
@@ -94,9 +94,12 @@ def run_agent(prompt: str) -> None:
     st.session_state.agent_messages.append({"role": "user", "content": prompt})
     with st.chat_message("user", avatar=USER_AVATAR):
         st.markdown(user_html(prompt), unsafe_allow_html=True)
-    with st.spinner("Agent bekerja: memilih tool, mengambil transkrip, memverifikasi kutipan..."):
+    with st.chat_message("assistant", avatar=ASSISTANT_AVATAR):
+        _typing = st.empty()
+        _typing.markdown(TYPING_INDICATOR, unsafe_allow_html=True)
         res = api_client.agent_chat(selected_id, prompt, history=history,
                                     rekap_id=st.session_state.agent_rekap_id)
+        _typing.empty()
     if "error" in res:
         st.session_state.agent_messages.append({"role": "assistant", "content": f"Error: {res['error']}",
                                                 "status": "error", "steps": []})
@@ -106,6 +109,7 @@ def run_agent(prompt: str) -> None:
         "role": "assistant", "content": res["answer"], "status": res["status"], "steps": res.get("steps", []),
         "trace_id": res["trace_id"], "approval": res.get("approval"), "tools": res.get("tools_called", []),
         "iterations": res.get("iterations"), "latency_ms": res.get("latency_ms"),
+        "sources": res.get("sources", []), "verifikasi": res.get("verifikasi", {}),
     })
     st.session_state.agent_selected_run = None   # show the newest run
 
@@ -163,6 +167,38 @@ def waiting_text(approval: dict | None) -> str:
             "tinjau kartu persetujuan di bawah, lalu klik **Setujui dan jalankan** atau **Tolak**.")
 
 
+def render_sources(sources: list, verifikasi: dict) -> None:
+    """References the agent read this run. Built by code from tool results; each shows speaker, time and text."""
+    total, missing = verifikasi.get("kutipan_total", 0), verifikasi.get("kutipan_tidak_ditemukan", 0)
+    if total:
+        check = (f"Kutipan di jawaban: {total - missing} dari {total} ditemukan persis di transkrip"
+                 + (" (sisanya ditandai di jawaban)." if missing else "."))
+    else:
+        check = "Jawaban tidak mengutip langsung; cocokkan isinya dengan sumber di bawah."
+    sources = sorted(sources, key=lambda s: not s.get("dikutip"))   # quoted ones first
+    with st.expander(f"Sumber ({len(sources)})", expanded=False):
+        st.caption(check + " Sumber = potongan transkrip dan butir terverifikasi yang dibaca agent; "
+                   "yang bertanda DIKUTIP dipakai di kutipan jawaban.")
+        for r in verifikasi.get("kutipan") or []:
+            note = (" (atribusi di jawaban dikoreksi kode)" if r.get("dikoreksi")
+                    else " (rentang waktu di jawaban dipersempit ke lokasi asli)" if r.get("dirapikan") else "")
+            more = " (kutipan muncul lebih dari sekali; ini kemunculan pertama)" if r.get("ambigu") and not r.get("ditulis") else ""
+            st.markdown(f"\u201c{r['kutipan']}\u201d  \n**Lokasi di transkrip:** {r['speaker']}, {r['mulai']}-{r['selesai']}{note}{more}")
+        shown_other = False
+        for s in sources:
+            if not s.get("dikutip") and not shown_other:
+                shown_other = True
+                st.markdown("**Dibaca agent, tidak dikutip di jawaban**")
+            tag = " **[DIKUTIP]**" if s.get("dikutip") else ""
+            if s.get("jenis") == "butir":
+                st.markdown(f"**{s['butir']} {s['id']}** | {s.get('speaker') or '-'} | {s.get('mulai') or '-'}{tag}  \n"
+                            f"{s['isi']}  \n> {s['kutipan']}")
+            else:
+                weak = " (kemiripan rendah)" if s.get("relevansi") == "rendah" else ""
+                st.markdown(f"Potongan transkrip ({s.get('speaker') or '-'}, {s['mulai']}-{s['selesai']}){weak}{tag}  \n> "
+                            + s["teks"].replace("\n", "  \n> "))
+
+
 def run_caption(m: dict) -> str:
     """'Menunggu persetujuan Anda | ekstrak_poin_meeting x3, ekspor_laporan | 4 iterasi | 41,9 dtk'."""
     from collections import Counter
@@ -196,6 +232,8 @@ with left:
                 st.markdown(m["content"])
             if m["role"] == "assistant" and m.get("status") not in (None, "approval", "error"):
                 st.caption(run_caption(m))
+            if m["role"] == "assistant" and m.get("sources") and m.get("status") == "completed":
+                render_sources(m["sources"], m.get("verifikasi") or {})
 
     # Approval card: pending requests of this meeting, created here or from the CLI.
     for approval in api_client.pending_approvals(selected_id):
@@ -261,6 +299,16 @@ with left:
                                "PJ": f"{t['penanggung_jawab']} ({t['sumber_penanggung_jawab']})",
                                "tenggat": t["tenggat"] or "-", "waktu": t["mulai"]} for t in tasks],
                              hide_index=True, use_container_width=True)
+
+    # Proactive next steps, built by code from the stored recap. A click sends the sentence as the user's own
+    # message; the agent run and the approval card then work as always.
+    if st.session_state.agent_rekap_id and not api_client.pending_approvals(selected_id):
+        for sg in api_client.suggestions(selected_id, st.session_state.agent_rekap_id):
+            with st.container(border=True):
+                st.markdown(f"**Saran langkah berikutnya**  \n{sg['teks']}")
+                if st.button(sg["tombol"], key=f"sg_{sg['id']}", type="primary"):
+                    st.session_state.agent_pending_prompt = sg["prompt"]
+                    st.rerun()
 
     st.markdown("<div style='color:#94a3b8;font-size:13px;margin-top:8px;'>Contoh permintaan:</div>",
                 unsafe_allow_html=True)

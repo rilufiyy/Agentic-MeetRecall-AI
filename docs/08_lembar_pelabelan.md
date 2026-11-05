@@ -182,3 +182,35 @@ Keputusan pengguna per butir: butir 1 sampai 5 benar; tidak ada butir terlewat.
 | Otomatis dari transkrip | S-01 sampai S-03 |
 | Otomatis dari trace, database, outbox, dan aturan teks | semua skenario lain; detail di dokumen 07 |
 
+
+## 10. Kunci label A-02 (2026-10-08 10:47:09 WIB)
+
+Label A-02 dikunci pada waktu di atas; setiap perubahan setelahnya harus dicatat dan hash baru dilaporkan.
+
+- SHA-256 seluruh berkas `docs/08_lembar_pelabelan.md` sebelum bagian 10 ini ditambahkan: `b0b9d8d8bcd088bbe645f5fd364411cc9e6e5d09a144dacf6fd635c8d1aa213f`
+- SHA-256 bagian A-02 saja (baris 14 sampai 39, dari judul "## 1. A-02" sampai sebelum "## 2. K-03", dibaca sebagai byte, pemisah baris `\n`): `bcee21b59e949dd99bc7e1629150239bf0ac46cda5c652bfd15ac34bd399e062`
+
+Hash berkas penuh tidak berlaku lagi setelah bagian 10 ditambahkan (berkas berubah); hash bagian A-02 tetap berlaku selama baris 14 sampai 39 tidak berubah.
+
+## 11. Kunci label A-03 (2026-10-09 09:23:04 WIB)
+
+Label A-03 dikunci pada waktu di atas dengan cara yang sama seperti A-02 (bagian 10).
+
+- SHA-256 bagian A-03 saja (baris 143 sampai 157, dari judul "## 7. A-03" sampai sebelum "## 8. R-01", dibaca sebagai byte, pemisah baris `\n`): `b814c05aed44c85800927e3bd68639edd87f9b6ce67c64dc70f694d297ba2943`
+- SHA-256 seluruh berkas sebelum bagian 11 ini ditambahkan: `7a54ecd88ecb56ed175857fe5125b8bd2f3749e85826536982ebdf08a65a5eb6`
+- Hash bagian A-02 dihitung ulang pada saat yang sama dan tidak berubah: `bcee21b59e949dd99bc7e1629150239bf0ac46cda5c652bfd15ac34bd399e062`
+
+## 12. Kunci label A-01, K-01, K-02, K-03, R-01, P-05 (2026-10-12 09:41:43 WIB)
+
+Enam label dikunci dengan hash, dengan cara yang sama seperti A-02 (bagian 10) dan A-03 (bagian 11). **Hash dicatat setelah seluruh run evaluasi selesai (hari kedua selesai 2026-10-10 09:30 WIB), sebelum output agent untuk skenario berlabel dilihat atau dinilai.**
+
+| Label | Bagian (baris) | SHA-256 bagian |
+|---|---|---|
+| A-01 | 4 (85 sampai 104) | `06efb6293f9d5961b2a0a819c2fb4c5c3e02b823442d51bb2a2be01d90dfa28e` |
+| K-01 | 5 (105 sampai 120) | `b03881ab4a3cf574ef06851d6b09108316f7da4cd5f8d2334b5634d901f6be3f` |
+| K-02 | 6 (121 sampai 142) | `9a8a6adabfa1491b07f422bcd566807161cdebc2d90b8807ba2aba69eac62d64` |
+| K-03 | 2 (40 sampai 62) | `7493877c55d92c45765ee6d170c38148dc2ee3f341aafb531b39e1f0980e4066` |
+| R-01 | 8 (159 sampai 174) | `cfc73f3e200d8c6a3d6426741fef39920adf050f03de19e9563ca63f5afb5bd2` |
+| P-05 | 3 (63 sampai 84) | `dfa2c8567f47813c9b757656204337494a7c65bad0aaf8408867bf76bdc03ec6` |
+
+Bukti label tidak berubah setelah run: (1) waktu ubah terakhir dokumen ini sebelum catatan ini ditambahkan adalah 2026-10-09 09:23:04 (penambahan kunci A-03), yaitu sebelum run hari kedua (2026-10-10 09:02 sampai 09:30 WIB); (2) kedelapan bagian label (A-01, A-02, A-03, K-01, K-02, K-03, R-01, P-05) identik byte demi byte dengan versi pada commit awal git (2026-10-07 16:02:51 +0700); (3) hash A-02 dan A-03 yang dihitung ulang sama dengan hash terkunci sebelumnya. SHA-256 seluruh berkas sebelum bagian 12 ini ditambahkan: `fb71e4dd0917a4417ccd613e46ee496f4f7c81c2501bd4c9c2bed341a36a604f`. Keterbatasan: tidak ada hash terkunci sebelum run untuk enam label ini; buktinya mtime dan kesamaan dengan commit awal.
