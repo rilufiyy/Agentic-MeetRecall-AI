@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from agent import config
+from agent import config, observability
 
 # Secret-looking keys only; "input_tokens" and "output_tokens" must stay readable.
 _SECRET_KEY = re.compile(
@@ -76,6 +76,8 @@ class Tracer:
         line = json.dumps(record, ensure_ascii=False, default=str)
         with _LOCK, self.path.open("a", encoding="utf-8") as f:
             f.write(line + "\n")
+        # Optional metadata copy to Langfuse; off unless LANGFUSE_ENABLED (agent/observability.py).
+        observability.forward(record)
         return record
 
     def guardrail(self, name: str, result: str, detail: Any = None) -> None:
